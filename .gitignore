@@ -9,6 +9,10 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+# key contains
+setting/*
+google-services.json
+GoogleService-info.plist
 
 # macOS
 .DS_Store
