@@ -4,10 +4,10 @@ import * as React from 'react';
 import { textStyles} from './styles';
 import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../setting/FirebaseConfig';
-import SharingInfoList from '../components/sharingInfo/SharingInfoList';
-import JobOpeningList from '../components/JobOpening/JobOpeningList';
-import JobFindingList from '../components/JobFinding/JobFinding';
-import MarketList from '../components/Market/MarketList'
+import SharingInfoList from './components/sharingInfo/SharingInfoList';
+import JobOpeningList from './components/JobOpening/JobOpeningList';
+import JobFindingList from './components/JobFinding/JobFindingList';
+import MarketList from './components/Market/MarketList'
 
 initializeApp(firebaseConfig);
 

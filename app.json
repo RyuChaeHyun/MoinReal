@@ -18,9 +18,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mobileProgramming.moin",
+      "googleServicesFile": "./setting/GoogleService-Info.plist",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "932679524918-uhu51egt7aigkb1arqcn9eudtvrdtgfn.apps.googleusercontent.com" 
+        }
+      }
     },
     "android": {
+      "package": "com.mobileProgramming.moin",
+      "googleServicesFile": "./setting/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
