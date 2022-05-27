@@ -14,19 +14,3 @@ export const textStyles = StyleSheet.create({
     }
 })
 
-// import styled from 'styled-components';
-
-// export const textStyles = {
-//     errorText: styled(Text)`
-//         font-weight: '750';
-//         color: red;
-//     `,
-//     basicText: styled(Text)`
-//         padding: 10;
-//         font-size: 25;
-//         font-weight: '600';
-//         color: black;
-//     `,
-
-// }
-
