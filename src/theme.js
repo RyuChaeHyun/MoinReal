@@ -1,5 +1,3 @@
-import normalize from "../lib/normalize";
-
 const colors = {
     primary: '#F9EB6C',
     dark: '#000000',
