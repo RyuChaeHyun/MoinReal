@@ -5,11 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import theme from './../../theme';
 import styled from 'styled-components/native';
 import Input from "../common/Input/Input.js";
-import { GoogleAuthProvider } from "firebase/auth";
 import Button from './../common/Button/Button';
-
-const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 const Signin = ({navigation}) => {
     const [ email, setEmail ] = useState('');
@@ -56,7 +52,7 @@ const Signin = ({navigation}) => {
             </Styled.innerContainer>
             <Styled.innerContainer>
                 <Input title={'email'} placeholder={'이메일을 입력해주세요'} onChangeSetText={setEmail} />
-                <Input title={'Password'} placeholder={'이메일을 입력해주세요'} onChangeSetText={setEmail} secureTextEntry={true}/>
+                <Input title={'Password'} placeholder={'비밀번호를 입력해주세요'} onChangeSetText={setPassword} secureTextEntry={true}/>
                 <Button
                     type={'Round'}
                     title={'Login'}

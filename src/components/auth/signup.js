@@ -36,7 +36,7 @@ const Signup = () => {
   }
 
   return (
-    <FormScrollView title={'시작하기'} type={'Round'} onPress={registration}>
+    <FormScrollView buttonTitle={'시작하기'} buttonType={'Round'} onPress={registration}>
       <Styled.innerContainer>
         <TitleText title={'가입정보'} />
         <Input 

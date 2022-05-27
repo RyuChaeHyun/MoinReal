@@ -12,6 +12,7 @@ import Signup from './components/auth/signup';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 
+
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
 // name은 절대 중복되면 안됨.
 // none은 name과 component만 들어가고, basic은 name, component, title이 들어가고, home은 name, component만 들어감.

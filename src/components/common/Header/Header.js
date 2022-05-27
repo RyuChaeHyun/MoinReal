@@ -13,9 +13,9 @@ export const LogoTitle = () =>{
 export const HeaderRight = () =>{
     return (
     <Styled.rightContainer>
-        <Button type={'Square'} title={'안녕핫요'} onPress={()=>console.log("TEST")} / >
-        <Button type={'Square'} title={`얄로`} onPress={()=>console.log("TT")} / >
-    </ Styled.rightContainer>
+        <Button type={'Square'} title={'안녕핫요'} onPress={()=>console.log("TEST")} />
+        <Button type={'Round'} title={'얄로'} onPress={()=>console.log("TT")} />
+    </Styled.rightContainer>
     );
 }
 
@@ -30,9 +30,8 @@ const Styled = {
     rightContainer: styled.View`
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        justify-align: right;
-        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
         padding-right: 24px;
     `,
 }
