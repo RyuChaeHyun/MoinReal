@@ -7,6 +7,7 @@ import SharingInfoList from './components/sharingInfo/SharingInfoList';
 import JobFindingList from './components/JobFinding/JobFindingList';
 import JobOpeningList from './components/JobOpening/JobOpeningList';
 import MarketList from './components/Market/MarketList';
+import MarketUpdate from './components/Market/MarketUpdate';
 import { colors } from './theme';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
@@ -33,7 +34,7 @@ export default function App() {
                 }}>
                   <Stack.Screen name="Singin" component={Signin} options={{ headerShown: false }} />
                   <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}/>
-                  <Stack.Screen name="SharingInfo" component={MarketList} />
+                  <Stack.Screen name="SharingInfo" component={MarketUpdate} />
                   <Stack.Screen name="Market" component={MarketList} />
                   <Stack.Screen name="JobFinding" component={JobFindingList} />
                   <Stack.Screen name="JobOpening" component={JobOpeningList} />
