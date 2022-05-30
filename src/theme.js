@@ -5,3 +5,4 @@ export const colors = {
     gray: '#E6E6E6',
     beige: '#FFFDEB',
 };
+
