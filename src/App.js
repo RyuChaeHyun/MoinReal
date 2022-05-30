@@ -10,6 +10,7 @@ import JobOpeningList from './components/JobOpening/JobOpeningList';
 import { colors } from './theme';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
+import SharingInfoUpdate from './components/sharingInfo/SharingInfoUpdate';
 
 export default function App() {
   firebase.initializeApp(config);
@@ -33,7 +34,7 @@ export default function App() {
                 }}>
                   <Stack.Screen name="Singin" component={Signin} options={{ headerShown: false }} />
                   <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}/>
-                  <Stack.Screen name="SharingInfo" component={SharingInfoList} />
+                  <Stack.Screen name="SharingInfo" component={SharingInfoUpdate} />
                   <Stack.Screen name="Market" component={MarketList} />
                   <Stack.Screen name="JobFinding" component={JobFindingList} />
                   <Stack.Screen name="JobOpening" component={JobOpeningList} />
