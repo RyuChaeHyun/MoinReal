@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import { StyleSheet } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
 
-
 const Wrapper = styled.View`
     background-color:#ffffff;
     padding: 10px 20px;

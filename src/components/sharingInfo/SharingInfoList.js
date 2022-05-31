@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-import { View, Text } from 'react-native';
-
-const SharingInfoList = ({route, navigation} ) => {
-=======
 import React, { useState } from "react";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import InputLabel from './InputLabel';
@@ -12,6 +7,7 @@ import preimage from '../../../assets/favicon.png'
 import Button from './Button';
 import styled from 'styled-components/native';
 import { images } from "../../utils/images";
+import { View, Text } from 'react-native';
 
 const StyledView = styled.View`
     // height:100vh;
@@ -19,17 +15,12 @@ const StyledView = styled.View`
     background-color:#ffffff;
 `;
 
-const SharingInfoList = ({route} ) => {
->>>>>>> Stashed changes
+const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);
+    const [title, setTitle] = useState('');
+    const [detail, setDetail] = useState('');
+    const [photoUrl, setPhotoUrl] = useState({preimage});
     return (
-<<<<<<< Updated upstream
-        <View>
-            <Text>SharingInfoList</Text>
-        </View>
-    )
-}
-=======
         <KeyboardAwareScrollView extraScrollHeight={10}>
             <StyledView>
                 <InputLabel 
@@ -50,7 +41,5 @@ const SharingInfoList = ({route} ) => {
         </KeyboardAwareScrollView>
     );
 };
->>>>>>> Stashed changes
-
 
 export default SharingInfoList;
