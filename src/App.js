@@ -4,7 +4,6 @@ import config from '../setting/firebase.json';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SharingInfoList from './components/sharingInfo/SharingInfoList';
-import MarketList from './components/Market/MarketList';
 import JobFindingList from './components/JobFinding/JobFindingList';
 import JobOpeningList from './components/JobOpening/JobOpeningList';
 import Signin from './components/auth/signin';
@@ -29,6 +28,7 @@ export default function App() {
   // basic setting
   firebase.initializeApp(config);
   const Stack = createNativeStackNavigator();  
+
   return (
     <>
         <NavigationContainer>
