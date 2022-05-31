@@ -3,11 +3,11 @@ import React, { useRef, useState } from "react";
 import { Alert, Text, View } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import styled from 'styled-components/native';
-import Input from "../common/Input/Input";
-import TitleText from "../common/TitleText/TitleText";
-import theme from './../../theme';
-import Button from './../common/Button/Button';
-import FormScrollView from './../common/FormScrollView/FormScrollView';
+import Input from "../../components/common/Input/Input";
+import TitleText from "../../components/common/TitleText/TitleText";
+import theme from '../../theme';
+import Button from '../../components/common/Button/Button';
+import FormScrollView from '../../components/common/FormScrollView/FormScrollView';
 
 const Signup = () => {
   const [ email, setEmail ] = useState('');

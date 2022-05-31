@@ -3,11 +3,12 @@ import * as firebase from 'firebase/app';
 import config from '../setting/firebase.json';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SharingInfoList from './components/sharingInfo/SharingInfoList';
-import JobFindingList from './components/JobFinding/JobFindingList';
-import JobOpeningList from './components/JobOpening/JobOpeningList';
-import Signin from './components/auth/signin';
-import Signup from './components/auth/signup';
+import SharingInfoList from './pages/SharingInfo/SharingInfoCreate';
+import JobFindingList from './pages/JobFinding/JobFindingList';
+import JobOpeningList from './pages/JobOpening/JobOpeningList';
+import Signin from './pages/auth/signin';
+import Signup from './pages/auth/signup';
+import MarketList from './components/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 
@@ -18,10 +19,10 @@ import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
   {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
-  {type: 'home', name:'SharingInfo', component:SharingInfoList},
-  {type: 'home', name:'Market', component:MarketList},
-  {type: 'home', name:'JobFinding', component:JobFindingList},
-  {type: 'home', name:'JobOpening', component:JobOpeningList},
+  {type: 'home', name:'SharingInfoList', component:SharingInfoList},
+  {type: 'home', name:'MarketList', component:MarketList},
+  {type: 'home', name:'JobFindingList', component:JobFindingList},
+  {type: 'home', name:'JobOpeningList', component:JobOpeningList},
 ]
 
 export default function App() {
@@ -33,7 +34,7 @@ export default function App() {
     <>
         <NavigationContainer>
           <Stack.Navigator 
-            initialRouteName = 'Sign'
+            initialRouteName = 'Signin'
             screenOptions={{
               title: 'Moin',
               headerTintColor: theme.colors.dark,

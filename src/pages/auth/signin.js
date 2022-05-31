@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import config from '../../../setting/firebase.json';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import theme from './../../theme';
+import theme from '../../theme';
 import styled from 'styled-components/native';
-import Input from "../common/Input/Input.js";
-import Button from './../common/Button/Button';
+import Input from "../../components/common/Input/Input.js";
+import Button from '../../components/common/Button/Button';
 
 const Signin = ({navigation}) => {
     const [ email, setEmail ] = useState('');
@@ -23,6 +23,9 @@ const Signin = ({navigation}) => {
             const user = userCredential.user;
             setUser(user);
             console.log(user);
+            navigation.push('SharingInfoList', {
+                userId: user,
+            })
             // ...
         }).catch((error) => {
             const errorCode = error.code;
@@ -32,9 +35,6 @@ const Signin = ({navigation}) => {
         });
         console.log(`Credentials ${email} [${password}]`);
         setSubmitPressed(false);
-        // navigation.push('SharingInfo', {
-        //     userId: user,
-        // })
     },[submitPressed])
 
     return (

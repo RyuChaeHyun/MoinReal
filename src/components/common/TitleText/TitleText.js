@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import theme from './../../../theme';
-import { Text } from 'react-native';
 
 const TitleText = ({title, ...props}) =>{
     return (
