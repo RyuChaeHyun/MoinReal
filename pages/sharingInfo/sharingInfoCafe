@@ -9,8 +9,8 @@ const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);
     return (
         <KeyboardAwareScrollView extraScrollHeight={10}>
-            <Styled.Title>생활꿀팁</Styled.Title>
-            <Styled.Subtitle>꿀팁! 공유해봐요~</Styled.Subtitle>
+            <Styled.Title>카페</Styled.Title>
+            <Styled.Subtitle>카페 정보 자유롭게 공유해봐요~</Styled.Subtitle>
             <Styled.Container>
                     <Styled.ItemsLayout>
                             <Styled.Item>
@@ -18,7 +18,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>집 인테리어 꿀팁 소개합니다~</Styled.Description>
+                                    <Styled.Description>‘뮌헨’에 위치한 딸기 케이크 맛집 다녀왔어요!</Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
                             <Styled.Item>
@@ -26,7 +26,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>화장실 청소 꿀팁, 깨끗하게 청소해요~</Styled.Description>
+                                    <Styled.Description>‘콘스탄츠’ 에 가서 디저트도 먹고 인생샷도 건진 카페 정보입니다!</Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
                             <Styled.Item>
@@ -34,7 +34,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>펜과 노트만 있나면 누구나 할 수 있는 생활꿀팁! </Styled.Description>
+                                    <Styled.Description>바닐라 아이스크림 유명한 공부하기 좋은 카페 </Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
 
@@ -43,7 +43,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>벽 인테리어 고민이 되시나요? 이렇게 한번 해보세요!</Styled.Description>
+                                <Styled.Description>마카롱 먹고 커피먹으면서 카공하고 왔어요!</Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                         <Styled.Item>
@@ -51,7 +51,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>펜과 노트만 있나면 누구나 할 수 있는 생활꿀팁! </Styled.Description>
+                                <Styled.Description>여기 와플이 유명하더라고요! </Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                         <Styled.Item>
@@ -59,7 +59,7 @@ const SharingInfoList = ({route, navigation} ) => {
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>벽 인테리어 고민이 되시나요? 이렇게 한번 해보세요!</Styled.Description>
+                                <Styled.Description>도넛 맛집 공유합니다~</Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                     </Styled.ItemsLayout>
@@ -129,4 +129,4 @@ const Styled = {
 
 export default SharingInfoList;
 
-//theme처리도 해야하고. 
+//theme처리

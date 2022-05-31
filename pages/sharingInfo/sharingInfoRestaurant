@@ -9,57 +9,63 @@ const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);
     return (
         <KeyboardAwareScrollView extraScrollHeight={10}>
-            <Styled.Title>생활꿀팁</Styled.Title>
-            <Styled.Subtitle>꿀팁! 공유해봐요~</Styled.Subtitle>
+            <Styled.Title>맛집</Styled.Title>
+            <Styled.Subtitle>맛집을 자유롭게 공유해봐요~</Styled.Subtitle>
             <Styled.Container>
                     <Styled.ItemsLayout>
                             <Styled.Item>
                                 <Styled.Cover>
+                                    <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>집 인테리어 꿀팁 소개합니다~</Styled.Description>
+                                    <Styled.Description>‘헤센주’ 양식 맛집 정보 공유합니다!</Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
                             <Styled.Item>
                                 <Styled.Cover>
+                                    <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>화장실 청소 꿀팁, 깨끗하게 청소해요~</Styled.Description>
+                                    <Styled.Description>카프레제 맛집 정보 공유할게요!</Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
                             <Styled.Item>
                                 <Styled.Cover>
+                                    <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                     <Styled.ImageBox></Styled.ImageBox>
                                 </Styled.Cover>
                                 <Styled.Content>
-                                    <Styled.Description>펜과 노트만 있나면 누구나 할 수 있는 생활꿀팁! </Styled.Description>
+                                    <Styled.Description>샌드위치 맛집 정보 공유할게요!</Styled.Description>
                                 </Styled.Content>
                             </Styled.Item>
 
                         <Styled.Item>
                             <Styled.Cover>
+                                <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>벽 인테리어 고민이 되시나요? 이렇게 한번 해보세요!</Styled.Description>
+                                <Styled.Description>분위기도, 맛도 모두 좋았던 ‘브레멘’  샐러드 맛집 꼭 가보세요~</Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                         <Styled.Item>
                             <Styled.Cover>
+                                <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>펜과 노트만 있나면 누구나 할 수 있는 생활꿀팁! </Styled.Description>
+                                <Styled.Description>독일에 있으면 꼭 먹어야 하는 음식점 Best1</Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                         <Styled.Item>
                             <Styled.Cover>
+                                <!-- {/* <Image source={require('../assets/pepper.jpg')} /> */} -->
                                 <Styled.ImageBox></Styled.ImageBox>
                             </Styled.Cover>
                             <Styled.Content>
-                                <Styled.Description>벽 인테리어 고민이 되시나요? 이렇게 한번 해보세요!</Styled.Description>
+                                <Styled.Description>여기 진짜 JMT.. 꼭가보세요!</Styled.Description>
                             </Styled.Content>
                         </Styled.Item>
                     </Styled.ItemsLayout>
