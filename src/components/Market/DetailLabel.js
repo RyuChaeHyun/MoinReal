@@ -14,7 +14,7 @@ const Wrapper = styled.View`
 
 const Title = styled.Text`
     font-size:20px;
-    font-weight:500;
+    font-weight:700;
     color: #000000;
     margin-top: 17px;
     margin-bottom: 10px;
@@ -24,7 +24,13 @@ const SubTitle = styled.Text`
     font-size:13px;
     color: #000000;
     margin-top:7px;
-    margin-bottom: 7px;
+    margin-bottom: 9px;
+`;
+
+const Price = styled.Text`
+    font-size:15px;
+    color: #000000;
+    align-self:flex-end;
 `;
 
 const StyledImage = styled.Image`
@@ -35,11 +41,12 @@ const StyledImage = styled.Image`
     padding-bottom:10px;
 `;
 
-const DetailLabel = ({url, title, subtitle}) => (
+const DetailLabel = ({url, title, subtitle, price}) => (
     <Wrapper>
         <StyledImage source ={{ url:url }}/>
         <Title>{title}</Title>
         <SubTitle>{subtitle}</SubTitle>
+        <Price>{price}</Price>
     </Wrapper>
 );
 
