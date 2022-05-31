@@ -3,7 +3,6 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import InputLabel from "../sharingInfo/InputLabel";
 import InputWithImage from "../sharingInfo/InputWithImage";
 import preimage from '../../../assets/favicon.png'
-import Button from "../sharingInfo/Button";
 import styled from 'styled-components/native';
 
 const StyledView = styled.View`
@@ -37,7 +36,7 @@ const MarketList = ({route} ) => {
                 name="detail" 
                 placeholder="상품에 관한 정보를 자유롭게 기입하여 주세요."
                 onChangeText={text =>setDetail(text)}/>
-            <Button title="작성"/>
+            <Button type={'Square'} title="작성"/>
         </StyledView>
         </KeyboardAwareScrollView>
     );
