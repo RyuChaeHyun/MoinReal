@@ -39,6 +39,7 @@ const Styled = {
         border-radius: 4px;
         width: fit-content;
         padding: 10px;
+        align-self: center;
     `,
     text: styled.Text`
         font-weight: bold;

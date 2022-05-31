@@ -8,7 +8,7 @@ import theme from '../../theme';
 import Button from './../../components/common/Button/Button';
 
 const StyledView = styled.View`
-    height:vh(100);
+    height:100vh;
     background-color:${theme.colors.white};
 `;
 
