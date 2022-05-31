@@ -14,13 +14,13 @@ const MarketUpdate = () => {
     
     return(
         <KeyboardAwareScrollView extraScrollHeight={10}>
-        <StyledView>
-            <InputLabel label="제목"/>
-            <InputWithImage label="사진"/>
-            <InputLabel label="가격(단위: 원)"/>
-            <InputLabel label="상세 내용"/>
-            <Button title="수정하기"/>
-        </StyledView>
+            <StyledView>
+                <InputLabel label="제목"/>
+                <InputWithImage label="사진"/>
+                <InputLabel label="가격(단위: 원)"/>
+                <InputLabel label="상세 내용"/>
+                <Button title="수정하기"/>
+            </StyledView>
         </KeyboardAwareScrollView>
     );
 };
