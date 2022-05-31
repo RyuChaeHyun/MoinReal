@@ -30,6 +30,7 @@ const Styled = {
         align-items: center;
         border-radius: 150px;
         height: 48px;
+        margin: 10px 0;
         `,
     squareButtonContainer: styled.TouchableOpacity`
         background-color: ${theme.colors.primary};

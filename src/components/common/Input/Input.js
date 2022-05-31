@@ -33,12 +33,11 @@ const Styled = {
         padding-left: 16px;
     `,
     textInput: styled.TextInput`
-        padding: 16px;
-        height: ${theme.fontSize.lg}px;
+        padding: 5px 10px;
+        height: auto;
         font-size: ${theme.fontSize.md}px;
         border : 1px solid ${theme.colors.gray};
         border-radius: 8px;
-        color: ${theme.colors.dark};
         background-color: ${theme.colors.white};
         placeholderTextColor: ${theme.colors.darkgray};
     `,

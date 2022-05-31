@@ -32,9 +32,9 @@ const Signin = ({navigation}) => {
         });
         console.log(`Credentials ${email} [${password}]`);
         setSubmitPressed(false);
-        navigation.push('SharingInfo', {
-            userId: user,
-        })
+        // navigation.push('SharingInfo', {
+        //     userId: user,
+        // })
     },[submitPressed])
 
     return (
@@ -61,7 +61,10 @@ const Signin = ({navigation}) => {
                 <Button
                     type={'Round'}
                     title={'Signup'}
-                    onPress={()=> navigation.push('Signup')}
+                    onPress={()=> {
+                        console.log('signup');
+                        navigation.push('Signup');
+                    }}
                 />
             </Styled.innerContainer>
         </Styled.container>
@@ -75,32 +78,22 @@ const Styled = {
         justify-content: space-evenly;
         height: 100%;
         width: 100%;
-        padding: 2rem;
+        padding: 30px;
         background: ${theme.colors.beige};
-    `,
-    textInput: styled.TextInput`
-        padding: 1rem;
-        height: 1.5rem;
-        font-size: 1.2rem;
-        border : 1px solid ${theme.colors.gray};
-        border-radius: 0.5rem;
-        background-color: ${theme.colors.white};
     `,
     innerContainer: styled.View`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        row-gap: 10px;
+        gap: 10px;
         flex-grow: 1;
     `,
     text: styled.Text`
-        font-size: 1rem;
-        textAlignVertical: 'top'
+        font-size: ${theme.fontSize.xxl}px;
     `,
     logoText: styled.Text`
-        font-size: 2rem;
+        font-size: ${theme.fontSize.xxxl}px;
         font-weight: bold;
-        textAlignVertical: 'top'
     `,
 }
 
