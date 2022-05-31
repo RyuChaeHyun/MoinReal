@@ -31,3 +31,23 @@ export const getExampleData = () => {
         setMemo(Object.values(data));
     });
 }
+
+//User가 작성한 정보 가져오기 SharingInfo Update에 필요
+export const getSharingInfo = () => {
+    const{displaytitle, category, photoURL, displaydetail} = Auth.currentUser;
+    return {
+        title:displaytitle, category, photoUrl : photoURL, detail:displaydetail};
+ };
+
+ 
+ export const updateInfoPhoto = async photoUrl =>{
+     const user = Auth.currentUser;
+     const storageUrl = photoUrl. startsWith('https')
+     ? photoUrl
+     :await uploadImage(photoUrl);
+     await user.updateProfile({photoUrl :storageUrl});
+
+     return{
+         title:user.displaytitle, category:user.category, photoUrl:user.photoURL, detail:user.detail
+     };
+ };
