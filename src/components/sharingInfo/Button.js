@@ -7,16 +7,18 @@ const Container = styled.TouchableOpacity`
     align-items:center;
     justify-content:center;
     border-radius: 4px;
-    width: 150px;
-    height:45px;
-    padding:10px 30px;
+    width: 80px;
+    height:38px;
+    padding:10px 10px;
     margin-left:20px;
+    align-self:center;
+    margin-bottom: 15px;
 `;
 
 const Title = styled.Text`
     height: 30px;
     font-weight:600;
-    font-size:16px;
+    font-size:13px;
     color: #000000;
  `;
 
