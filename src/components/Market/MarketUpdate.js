@@ -7,6 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 const StyledView = styled.View`
     background-color:#ffffff;
+    height:vh(100);
 `;
 
 const MarketUpdate = () => {

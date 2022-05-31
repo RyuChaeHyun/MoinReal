@@ -7,6 +7,7 @@ import DetailProfile from "./DetailProfile";
 
 const StyledView = styled.View`
     background-color:#ffffff;
+    height:vh(100);
 `;
 
 const MarketDetail = () => {

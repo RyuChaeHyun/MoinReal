@@ -6,9 +6,9 @@ import preimage from '../../../assets/favicon.png'
 import Button from "../sharingInfo/Button";
 import styled from 'styled-components/native';
 
-
 const StyledView = styled.View`
     background-color:#ffffff;
+    height:vh(100);
 `;
 
 const MarketList = ({route} ) => {
