@@ -17,8 +17,7 @@ const Label = styled.Text`
     margin-bottom: 7px;
 `;
 
-const InputDropBox = ( {label} ) => {
-    const [ category, setCategory ] = useState("");
+const InputDropBox = ({label, category, setCategory}) => {
     return (
         <Wrapper>
             <Label>{label}</Label>
