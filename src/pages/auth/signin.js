@@ -54,12 +54,12 @@ const Signin = ({navigation}) => {
                 <Input title={'email'} placeholder={'이메일을 입력해주세요'} onChangeSetText={setEmail} />
                 <Input title={'Password'} placeholder={'비밀번호를 입력해주세요'} onChangeSetText={setPassword} secureTextEntry={true}/>
                 <Button
-                    type={'Round'}
+                    shape={'Round'}
                     title={'Login'}
                     onPress={()=> setSubmitPressed(true)}
                     />
                 <Button
-                    type={'Round'}
+                    shape={'Round'}
                     title={'Signup'}
                     onPress={()=> {
                         console.log('signup');

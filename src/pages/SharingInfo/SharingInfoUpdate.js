@@ -19,7 +19,7 @@ const SharingInfoUpdate = () => {
               <InputWithImage label="사진"/>
               <InputDropBox label="카테고리"/>
               <InputLabel label="상세 내용"/>
-              <Button type={'Square'} title="수정 하기"/>
+              <Button shape={'Square'} title="수정 하기"/>
           </StyledView>
         </KeyboardAwareScrollView>
     );
