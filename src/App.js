@@ -11,6 +11,7 @@ import Signup from './pages/auth/signup';
 import MarketList from './components/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
+import MyPage from './pages/auth/MyPage';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -19,6 +20,7 @@ import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
   {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
+  {type: 'basic', name:'MyPage', component: MyPage, title:'마이페이지'},
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
