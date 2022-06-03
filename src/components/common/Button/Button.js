@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import theme from './../../../theme';
 
 // type은 Square 혹은 Round만 가능하다.
-const Button = ({type, title, ...props}) => {
-    if(type==='Square') {
+const Button = ({shape, title, ...props}) => {
+    if(shape==='Square') {
         return (
         <Styled.squareButtonContainer {...props}>
             <Styled.text>
@@ -12,7 +12,7 @@ const Button = ({type, title, ...props}) => {
         </Styled.squareButtonContainer>
         );
     }
-    else if(type==='Round') {
+    else if(shape==='Round') {
         return (
             <Styled.roundButtonContainer {...props}>
                 <Styled.text>

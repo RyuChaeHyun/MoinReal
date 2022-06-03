@@ -6,6 +6,8 @@ import InputDropBox from '../../components/sharingInfo/InputDropBox';
 import styled from 'styled-components/native';
 import theme from '../../theme';
 import Button from './../../components/common/Button/Button';
+import { createData } from './../../firebase/database';
+import Storage from './../../firebase/storage';
 
 const StyledView = styled.View`
     height:100vh;
@@ -15,8 +17,27 @@ const StyledView = styled.View`
 const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);
     const [title, setTitle] = useState('');
+    const [image, setImage] = useState(null);
+    const [ category, setCategory ] = useState("");
     const [detail, setDetail] = useState('');
-    const [photoUrl, setPhotoUrl] = useState('');
+
+    const _setClearData= () => {
+        setTitle('');
+        setImage(null);
+        setCategory('');
+        setDetail('');
+    }
+    const submitting = () => {
+        console.log(title, image, category, detail);
+        const data = {
+            title: title,
+            image: image,
+            category: category,
+            detail: detail,
+        }
+        createData('sharingInfo/', category, data);
+        _setClearData();
+    }
     return (
         <KeyboardAwareScrollView extraScrollHeight={10}>
             <StyledView>
@@ -25,15 +46,15 @@ const SharingInfoList = ({route, navigation} ) => {
                     name="title" 
                     placeholder="제목을 입력하세요"
                     onChangeText={text =>setTitle(text)}/>
-                <InputWithImage label="사진" name="photo" url={photoUrl}/>
-                <InputDropBox label="카테고리"/>
+                <InputWithImage table={'sharingInfo'} label="사진" name="photo" imageUrl={image} setImageUrl={setImage} />
+                <InputDropBox label="카테고리" category={category} setCategory={setCategory} />
                 <InputLabel 
                     label="상세내용" 
                     inputHeight="150" 
                     name="detail" 
                     placeholder="상품에 관한 정보를 자유롭게 기입하여 주세요."
                     onChangeText={text =>setDetail(text)}/>
-                <Button type={'Square'} title="작성"/>
+                <Button shape={'Square'} title="작성" onPress={submitting} />
             </StyledView>
         </KeyboardAwareScrollView>
     );

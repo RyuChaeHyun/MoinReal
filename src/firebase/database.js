@@ -1,27 +1,26 @@
-import { getDatabase, ref, set, onValue,get, child } from 'firebase/database';
+import { getDatabase, ref, onValue,get, child, push } from 'firebase/database';
 
-export const setExampleData = () =>{
+// 자동으로 id생성해준대용
+export const createData = (table, column, data) =>{
     const db = getDatabase();
-    set(ref(db, 'memo/' + 'testmemoID'), {
-        username: 'name',
-        email: 'emailTEST',
-        profile_picture : 'imageUrl',
-        date: new Date().toString()
-    });
+    push(ref(db, table + column), data);
 }
-export const getExampleAllData = () =>{
+
+export const getData = (table, column) =>{
     const dbRef = ref(getDatabase());
-    get(child(dbRef, `memo/testmemoID`)).then((snapshot) => {
+    const data = null;
+    get(child(dbRef, `${table}/${column}`)).then((snapshot) => {
         if (snapshot.exists()) {
         const val = snapshot.val();
         console.log(typeof val);
-        setMemo(Object.entries(val));
+        data = Object.entries(val);
         } else {
         console.log("No data available");
         }
     }).catch((error) => {
         console.error(error);
     });
+    return data;
 }
 export const getExampleData = () => {
     const db = getDatabase();
@@ -37,17 +36,17 @@ export const getSharingInfo = () => {
     const{displaytitle, category, photoURL, displaydetail} = Auth.currentUser;
     return {
         title:displaytitle, category, photoUrl : photoURL, detail:displaydetail};
- };
+};
 
- 
- export const updateInfoPhoto = async photoUrl =>{
-     const user = Auth.currentUser;
-     const storageUrl = photoUrl. startsWith('https')
-     ? photoUrl
-     :await uploadImage(photoUrl);
-     await user.updateProfile({photoUrl :storageUrl});
 
-     return{
-         title:user.displaytitle, category:user.category, photoUrl:user.photoURL, detail:user.detail
-     };
- };
+//  export const updateInfoPhoto = async photoUrl =>{
+//      const user = Auth.currentUser;
+//      const storageUrl = photoUrl. startsWith('https')
+//      ? photoUrl
+//      :await uploadImage(photoUrl);
+//      await user.updateProfile({photoUrl :storageUrl});
+
+//      return{
+//          title:user.displaytitle, category:user.category, photoUrl:user.photoURL, detail:user.detail
+//      };
+//  };

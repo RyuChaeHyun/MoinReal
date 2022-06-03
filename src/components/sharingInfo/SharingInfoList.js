@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styled from 'styled-components/native';
 import theme from '../../theme';
-import Button from './../common/Button/Button';
 
 const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);

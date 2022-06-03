@@ -12,7 +12,7 @@ const FormScrollView = ({children, buttonTitle, buttonType='Round', ...buttonPro
                 {children}
             </Styled.scrollView>
             <Styled.buttonBox>
-                <Button title={buttonTitle} type={buttonType} {...buttonProps} />
+                <Button title={buttonTitle} shape={buttonType} {...buttonProps} />
             </Styled.buttonBox>
         </Styled.container>
     );
