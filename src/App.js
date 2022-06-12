@@ -3,7 +3,10 @@ import * as firebase from 'firebase/app';
 import config from '../setting/firebase.json';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SharingInfoList from './pages/SharingInfo/SharingInfoCreate';
+import SharingInfoList from './pages/SharingInfo/SharingInfoList';
+// import SharingInfoList from './pages/SharingInfo/SharingInfoRestaurant';
+// import SharingInfoList from './pages/SharingInfo/SharingInfoCafe';
+// import SharingInfoList from './pages/SharingInfo/SharingInfoTip';
 import JobFindingList from './pages/JobFinding/JobFindingList';
 import JobOpeningList from './pages/JobOpening/JobOpeningList';
 import Signin from './pages/auth/signin';
@@ -18,8 +21,9 @@ import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 // none은 name과 component만 들어가고, basic은 name, component, title이 들어가고, home은 name, component만 들어감.
 const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
-  {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
-  {type: 'home', name:'SharingInfoList', component:SharingInfoList},
+  {type: 'home', name:'Signup', component: Signup, title:'회원 가입'},
+  {type: 'basic', name:'SharingInfoList', component:SharingInfoList},
+  // {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
