@@ -21,7 +21,7 @@ const Button = ({shape, title, ...props}) => {
             </Styled.roundButtonContainer>
         );
     }
-    else if(type=== 'Text') {
+    else if(shape=== 'Text') {
         return (
             <Styled.textButtonContainer {...props}>
                 <Styled.text>

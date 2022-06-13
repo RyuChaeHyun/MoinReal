@@ -1,5 +1,6 @@
 import { View, Text, Image, ScrollView} from 'react-native';
 // import { ScrollView } from 'react-native';
+import { useEffect, useState } from "react";
 import styled from 'styled-components/native';
 import React, {Component} from'react';
 // import theme from '../../theme';
@@ -8,11 +9,16 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ListItem from '../../components/sharingInfo/ListItem';
 import Button from './../../components/common/Button/Button';
 
+
 // const [isSelect, setSelect] = useState([false, false, false]);
 //가로 슬라이드 
-
+//
 const SharingInfoList = ({route, navigation} ) => {
     console.log(route.params);
+    const [title, setTitle] = useState('');
+    const [detail, setDetail] = useState('');
+    const [photoUrl, setPhotoUrl] = useState('');
+
     return (
         <Styled.Container1>
             <Styled.Menu>
@@ -21,18 +27,20 @@ const SharingInfoList = ({route, navigation} ) => {
                 <Styled.MenuItem>구직</Styled.MenuItem>
                 <Styled.MenuItem>중고거래</Styled.MenuItem>
             </Styled.Menu>
-            <Button type={'Text'} title="글쓰기"/>
+        
+            <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoRestaurant')}/>
+            {/* <Styled.UploadButton><Text>글쓰기</Text></Styled.UploadButton> */}
 
             <KeyboardAwareScrollView extraScrollHeight={10} >
-            <Styled.Title><Styled.TitleText>맛집</Styled.TitleText></Styled.Title>
+            <Styled.Title onPress = {()=> navigation.push('SharingInfoRestaurant')}><Styled.TitleText>맛집</Styled.TitleText></Styled.Title>
                 <Styled.CategoryView horizontal={true} showsVerticalScrollIndicator={false}>
                     <ListItem />
                 </Styled.CategoryView>
-            <Styled.Title><Styled.TitleText>카페</Styled.TitleText></Styled.Title>
+            <Styled.Title onPress = {()=> navigation.push('SharingInfoCafe')}><Styled.TitleText>카페</Styled.TitleText></Styled.Title>
                 <Styled.CategoryView horizontal={true} showsVerticalScrollIndicator={false}>
                     <ListItem />
                     </Styled.CategoryView>
-            <Styled.Title><Styled.TitleText>생활꿀팁</Styled.TitleText></Styled.Title>
+            <Styled.Title onPress = {()=> navigation.push('SharingInfoTip')}><Styled.TitleText>생활꿀팁</Styled.TitleText></Styled.Title>
                 <Styled.CategoryView horizontal={true} showsVerticalScrollIndicator={false}>
                     <ListItem />
                 </Styled.CategoryView>
@@ -73,7 +81,7 @@ const Styled = {
     margin-left: 40px;
     flex :1;
 `,
-    Title : styled.View`
+    Title : styled.TouchableOpacity`
     margin-top: 20px;
     margin-left: 25px;
     //dd
@@ -84,6 +92,7 @@ const Styled = {
     font-weight: 600;
     color: black;
 `,
+// //uploadButton아직 components button x
 //     UploadButton : styled.View`
 //     font-size: 15px;
 //     color: black;
