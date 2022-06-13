@@ -14,6 +14,7 @@ import Signup from './pages/auth/signup';
 import MarketList from './components/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
+import MyPage from './pages/auth/MyPage';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -21,9 +22,9 @@ import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 // none은 name과 component만 들어가고, basic은 name, component, title이 들어가고, home은 name, component만 들어감.
 const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
-  {type: 'home', name:'Signup', component: Signup, title:'회원 가입'},
-  {type: 'basic', name:'SharingInfoList', component:SharingInfoList},
-  // {type: 'home', name:'SharingInfoList', component:SharingInfoList},
+  {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
+  {type: 'basic', name:'MyPage', component: MyPage, title:'마이페이지'},
+  {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},

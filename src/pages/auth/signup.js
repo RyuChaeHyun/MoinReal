@@ -6,7 +6,6 @@ import styled from 'styled-components/native';
 import Input from "../../components/common/Input/Input";
 import TitleText from "../../components/common/TitleText/TitleText";
 import theme from '../../theme';
-import Button from '../../components/common/Button/Button';
 import FormScrollView from '../../components/common/FormScrollView/FormScrollView';
 
 const Signup = () => {

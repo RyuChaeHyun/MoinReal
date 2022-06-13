@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import PropTypes from 'prop-types';
+import ImageUploader from '../../components/common/ImageUploader';
 
 const Container = styled.View`
     background-color:#ffffff;
@@ -15,31 +15,13 @@ const Label = styled.Text`
     margin-bottom: 7px;
 `;
 
-const StyledImage = styled.Image`
-    background-color: #FFFDEB;
-    width:100%;
-    height:160px;
-    border-radius:3px;
-    padding-bottom:10px;
-`;
-
-const InputWithImage = ({label, url, imageStyle, rounded}) => {
+const InputWithImage = ({label, ...props}) => {
     return (
         <Container>
             <Label>{label}</Label>
-            <StyledImage source ={{ url:url }} styled={imageStyle} rounded={rounded}/>
+            <ImageUploader {...props} />
         </Container>
     );
-};
-
-InputWithImage.defaultProps ={
-    rounded:false,
-};
-
-InputWithImage.prototype ={
-    url : PropTypes.string,
-    image :PropTypes.object,
-    rounded : PropTypes.bool,
 };
 
 export default InputWithImage;

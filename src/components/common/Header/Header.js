@@ -10,11 +10,11 @@ export const LogoTitle = () =>{
     );
 }
 
-export const HeaderRight = () =>{
+export const HeaderRight = ({navigation}) =>{
     return (
     <Styled.rightContainer>
-        <Button type={'Square'} title={'안녕핫요'} onPress={()=>console.log("TEST")} />
-        <Button type={'Round'} title={'얄로'} onPress={()=>console.log("TT")} />
+        <Button shape={'Round'} title={'채팅'} onPress={()=>console.log("move to chat")} />
+        <Button shape={'Round'} title={'내정보'} onPress={()=>console.log("TT")} />
     </Styled.rightContainer>
     );
 }
