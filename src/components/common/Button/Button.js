@@ -21,6 +21,15 @@ const Button = ({shape, title, ...props}) => {
             </Styled.roundButtonContainer>
         );
     }
+    else if(shape=== 'Text') {
+        return (
+            <Styled.textButtonContainer {...props}>
+                <Styled.text>
+                    {title}
+                </Styled.text>
+            </Styled.textButtonContainer>
+        );
+    }
 }
 // Style
 const Styled = {
@@ -40,6 +49,14 @@ const Styled = {
         width: fit-content;
         padding: 10px;
         align-self: center;
+    `,
+
+    textButtonContainer : styled.TouchableOpacity`
+        flex-direction : row-reverse;
+        margin-top : 13px;
+        textDecorationLine: underline;
+        margin-right : 10px;
+
     `,
     text: styled.Text`
         font-weight: bold;
