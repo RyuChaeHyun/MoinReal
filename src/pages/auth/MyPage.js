@@ -44,7 +44,7 @@ const Styled = {
         border-radius: 90px;
     `,
     imageText: styled.Text`
-        font-size : ${theme.fontSize.xxl};
+        font-size : ${theme.fontSize.xxl}px;
         font-weight: bold;
     `,
 }
