@@ -1,26 +1,29 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import ImageUploader from '../../components/common/ImageUploader';
+import theme from '../../theme';
 
-const Container = styled.View`
-    background-color:#ffffff;
-    justify-content:left;
-    align-items:left;
-    padding: 0px 20px;
-`;
-
-const Label = styled.Text`
-    font-size:15px;
-    color: #000000;
-    margin-bottom: 7px;
-`;
+const Styled = {
+    container: styled.View`
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 0;
+    `,
+    label : styled.Text`
+        font-size: ${theme.fontSize.md}px;
+        font-weight: bold;
+        color: black
+        padding-left: 16px;
+    `,
+}
 
 const InputWithImage = ({label, ...props}) => {
     return (
-        <Container>
-            <Label>{label}</Label>
+        <Styled.container>
+            <Styled.label>{label}</Styled.label>
             <ImageUploader {...props} />
-        </Container>
+        </Styled.container>
     );
 };
 

@@ -1,6 +1,7 @@
 import Button from './../Button/Button';
 import styled from 'styled-components/native';
 import theme from './../../../theme';
+import { push } from 'firebase/database';
 
 export const LogoTitle = () =>{
     return (
@@ -14,7 +15,7 @@ export const HeaderRight = ({navigation}) =>{
     return (
     <Styled.rightContainer>
         <Button shape={'Round'} title={'채팅'} onPress={()=>console.log("move to chat")} />
-        <Button shape={'Round'} title={'내정보'} onPress={()=>console.log("TT")} />
+        <Button shape={'Round'} title={'내정보'} onPress = {()=> navigation.push('SharingInfoCreate')} />
     </Styled.rightContainer>
     );
 }
@@ -31,7 +32,7 @@ const Styled = {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        gap: 5px;
-        padding-right: 24px;
+        gap: 12px;
+        padding-right: 12px;
     `,
 }
