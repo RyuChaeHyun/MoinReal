@@ -10,8 +10,8 @@ const SharingInfoRestaurant = ({route, navigation} ) => {
     return (
         <KeyboardAwareScrollView extraScrollHeight={10}>
             <Styled.Title>맛집</Styled.Title>
-                <Styled.Subtitle>맛집을 자유롭게 공유해봐요~</Styled.Subtitle>
-                <ListItem />
+            <Styled.Subtitle>맛집을 자유롭게 공유해봐요~</Styled.Subtitle>
+            <ListItem />
         </KeyboardAwareScrollView>
     )
 }
