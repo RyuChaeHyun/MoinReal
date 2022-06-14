@@ -7,9 +7,6 @@ const Wrapper = styled.View`
     background-color:#ffffff;
     margin:10px 0;
     padding: 10px 20px;
-    &+& {
-        margin-top: 20px;
-    }
 `;
 
 const Label = styled.Text`
