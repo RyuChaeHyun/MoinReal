@@ -1,14 +1,13 @@
-import { ScrollView } from "react-native-gesture-handler";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styled from "styled-components/native";
 import Button from "../Button/Button";
-import { View } from 'react-native';
 import { StatusBar } from "expo-status-bar";
 import theme from './../../../theme';
 
 const FormScrollView = ({children, buttonTitle, buttonType='Round', ...buttonProps}) => {
     return (
         <Styled.container>
-            <Styled.scrollView invertStickyHeaders={true}>
+            <Styled.scrollView extraScrollHeight={10}>
                 {children}
             </Styled.scrollView>
             <Styled.buttonBox>
@@ -25,12 +24,11 @@ const Styled = {
         margin-top: ${StatusBar.currentHeight},
         background: ${theme.colors.white};
     `,
-    scrollView: styled.ScrollView`
+    scrollView: styled(KeyboardAwareScrollView)`
         display: flex;
         flex-direction: column;
         height: 100%;
         width: 100%;
-        padding: 16px;
     `,
     buttonBox: styled.View`
         padding: 16px;

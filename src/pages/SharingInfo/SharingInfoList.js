@@ -28,7 +28,7 @@ const SharingInfoList = ({route, navigation} ) => {
                 <Styled.MenuItem>중고거래</Styled.MenuItem>
             </Styled.Menu>
         
-            <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoRestaurant')}/>
+            <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
             {/* <Styled.UploadButton><Text>글쓰기</Text></Styled.UploadButton> */}
 
             <KeyboardAwareScrollView extraScrollHeight={10} >
