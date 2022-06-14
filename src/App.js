@@ -12,6 +12,7 @@ import MarketList from './components/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 import MyPage from './pages/auth/MyPage';
+import MyPageEdit from './pages/auth/MyPageEdit';
 import SharingInfoRestaurant from './pages/SharingInfo/SharingInfoRestaurant';
 import SharingInfoCafe from './pages/SharingInfo/SharingInfoCafe';
 import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
@@ -25,6 +26,7 @@ const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
   {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
   {type: 'basic', name:'MyPage', component: MyPage, title:'마이페이지'},
+  {type: 'basic', name:'MyPageEdit', component: MyPageEdit, title:'마이페이지 수정'},
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'basic', name:'SharingInfoCreate', component:SharingInfoCreate, title:'글쓰기'},
   {type: 'basic', name:'SharingInfoRestaurant', component:SharingInfoRestaurant, title:'맛집'},
