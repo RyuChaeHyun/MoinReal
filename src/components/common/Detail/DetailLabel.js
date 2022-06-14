@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const DetailLabel = ({url, title, subtitle}) => (
+const DetailLabel = ({url, title, subtitle, category}) => (
     <Styled.wrapper>
         <styled.styledImage source ={{ url:url }}/>
         <styled.title>{title}</styled.title>
         <styled.subTitle>{subtitle}</styled.subTitle>
-
+        <styled.category>{category}</styled.category>
     </Styled.wrapper>
 );
 
@@ -34,11 +34,11 @@ const Styled={
         margin-top:7px;
         margin-bottom: 9px;
     `,
-    // price : styled.Text`
-    //     font-size:15px;
-    //     color: #000000;
-    //     align-self:flex-end;
-    // `,
+    category : styled.Text`
+        font-size:15px;
+        color: #000000;
+        align-self:flex-end;
+    `,
     styledImage : styled.Image`
         background-color: #FFFDEB;
         width:100%;
