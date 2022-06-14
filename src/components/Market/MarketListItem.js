@@ -14,10 +14,10 @@ const dataList = [
 const data = {
     id : nanoid(),
     image : "사진주소", 
-    detail : "맛납니다..", 
+    detail : "사세요..", 
 }
 
-const ListItem = () => {
+const MarketListItem = () => {
   return (
     <Styled.container>
       <Styled.itemsLayout>
@@ -79,4 +79,4 @@ const Styled = {
   `,
 };
 
-export default ListItem;
+export default MarketListItem;
