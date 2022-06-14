@@ -5,7 +5,7 @@ const ProfileImage = ({profileUrl, username}) => {
   return (
     <Styled.imageBox>
       <Styled.image source={profileUrl} />
-      {username && <Styled.text>{username}</Styled.text>}
+      <Styled.text>{username}</Styled.text>
     </Styled.imageBox>
   );
 };

@@ -15,21 +15,23 @@ export const createData = (table, column, data) =>{
 
 export const getData = (table, column) =>{
     const dbRef = ref(getDatabase());
-    const data = null;
     get(child(dbRef, `${table}/${column}`)).then((snapshot) => {
         if (snapshot.exists()) {
-        const val = snapshot.val();
-        console.log(typeof val);
-        data = Object.entries(val);
+            const val = snapshot.val();
+            const data = {data: val};
+            console.log(data)
+            return data;
         } else {
-        console.log("No data available");
+            console.log("No data available");
         }
     }).catch((error) => {
         console.error(error);
+        alert('데이터를 불러올 수 없습니다. 다시 시도해주세요.');
+        Alert.alert('데이터를 불러올 수 없습니다. 다시 시도해주세요.');
     });
-    return data;
 }
-export const getExampleData = () => {
+
+export const getExampleData = (table) => {
     const db = getDatabase();
     const starCountRef = ref(db, 'memo/testmemoID');
     onValue(starCountRef, (snapshot) => {

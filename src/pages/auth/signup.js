@@ -19,7 +19,7 @@ const Signup = ({navigation}) => {
   const [username, setUsername] = useState("");
   const [village, setVillage] = useState("");
   const [phone, setPhone] = useState("");
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
 
   // onSubmit
   const onSubmitting = () => {
