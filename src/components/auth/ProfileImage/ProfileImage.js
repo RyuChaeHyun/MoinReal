@@ -3,15 +3,15 @@ import theme from '../../../theme';
 
 const ProfileImage = ({profileUrl, username}) => {
   return (
-    <Styled.imageUrlBox>
-      <Styled.imageUrl source={profileUrl} />
-      <Styled.imageText>{username}</Styled.imageText>
-    </Styled.imageUrlBox>
+    <Styled.imageBox>
+      <Styled.image source={profileUrl} />
+      {username && <Styled.text>{username}</Styled.text>}
+    </Styled.imageBox>
   );
 };
 
 const Styled = {
-  imageUrlBox: styled.View`
+  imageBox: styled.View`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,12 +19,12 @@ const Styled = {
     gap: 10px;
     padding: 10px 0;
   `,
-  imageUrl: styled.Image`
+  image: styled.Image`
     width: 180px;
     height: 180px;
     border-radius: 90px;
   `,
-  imageText: styled.Text`
+  text: styled.Text`
     font-size: ${theme.fontSize.xxl}px;
     font-weight: bold;
   `,

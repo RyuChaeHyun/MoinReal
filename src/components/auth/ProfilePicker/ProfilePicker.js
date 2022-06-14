@@ -4,14 +4,14 @@ import * as ImagePicker from "expo-image-picker";
 import styled from "styled-components/native";
 import theme from "./../../../theme";
 import Storage from "./../../../firebase/storage";
-import DotLoader from "react-spinners/DotLoader";
 
-// imageurl = img reference
-export default function ImagePickerExample({ table, imageUrl, setImageUrl }) {
+// 나중에 common으로 옮겨가는 일이 생기면 이 부분 파라미터로 받게 변경
+const table = 'auth'; 
+const ProfilePicker = ({ title, image, setImage, ...props }) => {
   // contain real image information
-  const [image, setImage] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [progressStatus, setProgressStatus] = useState(0);
+
   // function - select image using imagepicker
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -20,11 +20,13 @@ export default function ImagePickerExample({ table, imageUrl, setImageUrl }) {
       aspect: [4, 3],
       quality: 1,
     });
+
     // loading
     setLoading(true);
+
     /**
      * filename convension : images/${table}/${now}
-     * ex. images/sharingInfo/19838428394
+     * ex. images/auth/19838428394
      * **/
     const now = new Date().getTime();
     const fileName = `${table}/${now}`;
@@ -44,42 +46,58 @@ export default function ImagePickerExample({ table, imageUrl, setImageUrl }) {
   };
 
   return (
-    <>
-      {image ? (
-        <Styled.imageBox onPress={pickImage}>
-          <Styled.image source={{ uri: image }} />
-        </Styled.imageBox>
+    <Styled.container>
+      <Styled.imageText>{title}</Styled.imageText>
+      <Styled.imageBox { ...props}>
+      {image && progressStatus===100 ? (
+          <Styled.imageTouchable onPress={pickImage}>
+            <Styled.imageUrl source={{ uri: image }} />
+          </Styled.imageTouchable>
       ) : (
-        <Styled.imageBox onPress={pickImage}>
-          <Text>{"사진 추가"}</Text>
-          {progressStatus > 0 ? <Text>{progressStatus.toFixed(0)}%</Text> : null}
-        </Styled.imageBox>
+          <Styled.imageTouchable onPress={pickImage}>
+            <Text>{"사진 추가"}</Text>
+            {progressStatus > 0 ? <Text>{progressStatus.toFixed(0)}%</Text> : null}
+          </Styled.imageTouchable>
       )}
-    </>
+      </Styled.imageBox>
+    </Styled.container>
   );
-}
+};
 
 const Styled = {
   container: styled.View`
     display: flex;
-    align-items: center;
-    justify-content: center;
-  `,
-  imageBox: styled.TouchableOpacity`
-    background-color: ${theme.colors.beige};
-    border: 1px solid ${theme.colors.darkgray};
-    width: 100%;
-    height: 160px;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    padding: 8px 0;
   `,
-  image: styled.Image`
-    width: 100%;
-    height: 100%
+  imageText: styled.Text`
+    font-size: ${theme.fontSize.md}px;
+    font-weight: bold;
+    color: black;
+  `,
+  imageBox: styled.View`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  `,
+  imageTouchable: styled.TouchableOpacity`
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    display: flex;
+    flex-direction : column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: ${theme.colors.gray};
+  `,
+  imageUrl: styled.Image`
     object-fit: fill;
   `,
 };
+
+export default ProfilePicker;

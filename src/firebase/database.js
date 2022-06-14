@@ -1,9 +1,16 @@
-import { getDatabase, ref, onValue,get, child, push } from 'firebase/database';
+import { getDatabase, ref, onValue,get, child, push, set } from 'firebase/database';
+import { getAuth, updateProfile} from 'firebase/auth';
 
-// 자동으로 id생성해준대용
-export const createData = (table, column, data) =>{
+// 자동으로 id생성 해준대용
+export const createDataWithId = (table, column, data) =>{
     const db = getDatabase();
     push(ref(db, table + column), data);
+}
+
+// 자동으로 id생성 안해용 (column이 id가 됩니당)
+export const createData = (table, column, data) =>{
+    const db = getDatabase();
+    set(ref(db, table + column), data);
 }
 
 export const getData = (table, column) =>{
@@ -37,16 +44,3 @@ export const getSharingInfo = () => {
     return {
         title:displaytitle, category, photoUrl : photoURL, detail:displaydetail};
 };
-
-
-//  export const updateInfoPhoto = async photoUrl =>{
-//      const user = Auth.currentUser;
-//      const storageUrl = photoUrl. startsWith('https')
-//      ? photoUrl
-//      :await uploadImage(photoUrl);
-//      await user.updateProfile({photoUrl :storageUrl});
-
-//      return{
-//          title:user.displaytitle, category:user.category, photoUrl:user.photoURL, detail:user.detail
-//      };
-//  };
