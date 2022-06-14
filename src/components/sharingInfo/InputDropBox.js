@@ -2,25 +2,27 @@ import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { StyleSheet } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
+import theme from '../../theme';
 
-const Wrapper = styled.View`
-    background-color:#ffffff;
-    padding: 10px 20px;
-    &+& {
-        margin-top: 20px;
-    }
-`;
-
-const Label = styled.Text`
-    font-size:15px;
-    color: #000000;
-    margin-bottom: 7px;
-`;
+const Styled = {
+    container: styled.View`
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 0;
+    `,
+    label : styled.Text`
+        font-size: ${theme.fontSize.md}px;
+        font-weight: bold;
+        color: black
+        padding-left: 16px;
+    `,
+}
 
 const InputDropBox = ({label, category, setCategory}) => {
     return (
-        <Wrapper>
-            <Label>{label}</Label>
+        <Styled.container>
+            <Styled.label>{label}</Styled.label>
             <RNPickerSelect
                 placeholder={{
                     label:'카테고리를 선택하세요',
@@ -36,7 +38,7 @@ const InputDropBox = ({label, category, setCategory}) => {
                     { label: '생활꿀팁', value: 'life' },
                 ]}
             />
-        </Wrapper>
+        </Styled.container>
     );
 };
 

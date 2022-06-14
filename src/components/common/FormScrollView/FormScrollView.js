@@ -2,7 +2,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styled from "styled-components/native";
 import Button from "../Button/Button";
 import { StatusBar } from "expo-status-bar";
-import theme from './../../../theme';
+import theme from '../../../theme';
 
 const FormScrollView = ({children, buttonTitle, buttonType='Round', ...buttonProps}) => {
     return (
@@ -21,7 +21,7 @@ const Styled = {
     container: styled.SafeAreaView`
         height: 100%;
         width: 100%;
-        margin-top: ${StatusBar.currentHeight},
+        margin-top: ${StatusBar.currentHeight};
         background: ${theme.colors.white};
     `,
     scrollView: styled(KeyboardAwareScrollView)`
@@ -29,6 +29,7 @@ const Styled = {
         flex-direction: column;
         height: 100%;
         width: 100%;
+        padding: 15px;
     `,
     buttonBox: styled.View`
         padding: 16px;
