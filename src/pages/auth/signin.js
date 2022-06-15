@@ -7,6 +7,8 @@ import styled from 'styled-components/native';
 import Input from "../../components/common/Input/Input.js";
 import Button from '../../components/common/Button/Button';
 import { Alert } from 'react-native';
+// import { ImageBackground } from "react-native";
+// import backimage from '../../../assets/Background.png';
 
 const Signin = ({navigation}) => {
     const [ email, setEmail ] = useState('');
@@ -59,6 +61,7 @@ const Signin = ({navigation}) => {
     }
 
     return (
+        // <ImageBackground style={{width:"100%", height:"100%"}} source=require({backimage}) resizeModel="cover">
         <Styled.container>
             <Styled.innerContainer>
                 <Styled.text>
@@ -89,6 +92,7 @@ const Signin = ({navigation}) => {
                 />
             </Styled.innerContainer>
         </Styled.container>
+        // </ImageBackground>
     );
 };
 
