@@ -40,6 +40,7 @@ const pageHeaderList = [
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
   {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},
+  // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
 ]
 
 export default function App() {
