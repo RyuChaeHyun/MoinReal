@@ -8,7 +8,7 @@ import JobFindingList from './pages/JobFinding/JobFindingList';
 import JobOpeningList from './pages/JobOpening/JobOpeningList';
 import Signin from './pages/auth/signin';
 import Signup from './pages/auth/signup';
-import MarketList from './components/Market/MarketList';
+import MarketList from './pages/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 import MyPage from './pages/auth/MyPage';
@@ -19,6 +19,7 @@ import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
 import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
+import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -38,7 +39,9 @@ const pageHeaderList = [
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
-  {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},]
+  {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},
+  // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
+]
 
 export default function App() {
   // basic setting
