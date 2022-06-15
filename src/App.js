@@ -53,7 +53,7 @@ export default function App() {
     <>
         <NavigationContainer ref={ref}>
           <Stack.Navigator 
-            initialRouteName = 'JobOpeningDetail'
+            initialRouteName = 'Signin'
             screenOptions={{
               title: 'Moin',
               headerTintColor: theme.colors.dark,
