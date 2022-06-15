@@ -1,5 +1,6 @@
 import { getDatabase, ref, onValue,get, child, push, set, update } from 'firebase/database';
 import { getAuth, updateProfile} from 'firebase/auth';
+import { Alert } from 'react-native';
 
 // 자동으로 id생성 해준대용
 export const createDataWithId = (table, column, data) =>{
@@ -23,6 +24,7 @@ export const getData = (table, column, setData) =>{
             setData(data.data);
         } else {
             console.log("No data available");
+            setData({});
         }
     }).catch((error) => {
         console.error(error);
