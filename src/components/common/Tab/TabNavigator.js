@@ -3,8 +3,8 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import JobOpeningList from '../../../pages/JobOpening/JobOpeningList';
 import JobFindingList from '../../../pages/JobFinding/JobFindingList';
 import SharingInfoList from '../../../pages/SharingInfo/SharingInfoList';
-import MarketList from '../../Market/MarketList';
 import theme from '../../../theme';
+import MarketList from './../../../pages/Market/MarketList';
 
 const Tab = createMaterialTopTabNavigator();
 
