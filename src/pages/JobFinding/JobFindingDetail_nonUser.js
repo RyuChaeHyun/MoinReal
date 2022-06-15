@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styled from 'styled-components/native';
 import DetailLabel from "../../components/Market/DetailLabel";
-import DetailProfile from "../../components/common/Detail/DetailProfile";
+// import DetailProfile from "../../components/common/Detail/DetailProfile";
 import theme from "../../theme";
 
 
@@ -25,9 +25,9 @@ const JobFindingDetail_nonUser = () => {
                         title={data.title}
                         subtitle={data.subtitle}
                         category={data.category}/>
-                    <DetailProfile
+                    {/* <DetailProfile
                         url={profiledata.url}
-                    />
+                    /> */}
                 </Styled.styleview>
             </KeyboardAwareScrollView>
         </Styled.container>

@@ -7,19 +7,17 @@ import Button from "./../../components/common/Button/Button";
 import { getData } from "../../firebase/database";
 import { useEffect } from "react";
 
-
-
 const SharingInfoList = ({ navigation }) => {
   // 기본으로 불러와야하는 내용들
   const [lists, setLists] = useState({
     cafe: [],
     life: [],
     restaurant: [],
-  })
+  });
 
-  useEffect(()=>{
+  useEffect(() => {
     getData("sharingInfo", "", setLists);
-  },[])
+  }, []);
 
   return (
     <Styled.container>
@@ -27,44 +25,59 @@ const SharingInfoList = ({ navigation }) => {
         shape={"Text"}
         title={"글쓰기"}
         onPress={() => navigation.push("SharingInfoCreate")}
+        style={{ alignSelf: "flex-end" }}
       />
       <KeyboardAwareScrollView extraScrollHeight={10}>
+        <Styled.listBox>
+          <Styled.listTitle
+            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'맛집', pageSubTitle:'맛집을 자유롭게 공유해봐요~', list:Object.entries(lists.restaurant)})}
+          >
+            <Styled.listTitleText>{"맛집"}</Styled.listTitleText>
+          </Styled.listTitle>
+          <Styled.listCategoryView
+            horizontal={true}
+            showsVerticalScrollIndicator={false}
+          >
+            <ListItem
+              list={Object.entries(lists.restaurant)}
+              navigation={navigation}
+            />
+          </Styled.listCategoryView>
+        </Styled.listBox>
 
-      <Styled.listBox>
-            <Styled.listTitle onPress={() => navigation.push('SharingInfoRestaurant')}>
-              <Styled.listTitleText>{'맛집'}</Styled.listTitleText>
-            </Styled.listTitle>
-            <Styled.listCategoryView
-              horizontal={true}
-              showsVerticalScrollIndicator={false}
-            >
-              <ListItem list={Object.entries(lists.restaurant)} navigation={navigation} />
-            </Styled.listCategoryView>
-          </Styled.listBox>
+        <Styled.listBox>
+        <Styled.listTitle
+            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'카페', pageSubTitle:'카페 정보 자유롭게 공유해봐요~', list:Object.entries(lists.cafe)})}
+          >
+          <Styled.listTitleText>{"카페"}</Styled.listTitleText>
+          </Styled.listTitle>
+          <Styled.listCategoryView
+            horizontal={true}
+            showsVerticalScrollIndicator={false}
+          >
+            <ListItem
+              list={Object.entries(lists.cafe)}
+              navigation={navigation}
+            />
+          </Styled.listCategoryView>
+        </Styled.listBox>
 
-          <Styled.listBox>
-            <Styled.listTitle onPress={() => navigation.push('SharingInfoCafe')}>
-              <Styled.listTitleText>{'카페'}</Styled.listTitleText>
-            </Styled.listTitle>
-            <Styled.listCategoryView
-              horizontal={true}
-              showsVerticalScrollIndicator={false}
-            >
-              <ListItem list={Object.entries(lists.cafe)} navigation={navigation} />
-            </Styled.listCategoryView>
-          </Styled.listBox>
-
-          <Styled.listBox>
-            <Styled.listTitle onPress={() => navigation.push('SharingInfoTip')}>
-              <Styled.listTitleText>{'생활꿀팁'}</Styled.listTitleText>
-            </Styled.listTitle>
-            <Styled.listCategoryView
-              horizontal={true}
-              showsVerticalScrollIndicator={false}
-            >
-              <ListItem list={Object.entries(lists.life)} navigation={navigation} />
-            </Styled.listCategoryView>
-          </Styled.listBox>
+        <Styled.listBox>
+        <Styled.listTitle
+            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'생활꿀팁', pageSubTitle:'꿀팁! 공유해봐요~', list:Object.entries(lists.life)})}
+          >
+          <Styled.listTitleText>{"생활꿀팁"}</Styled.listTitleText>
+          </Styled.listTitle>
+          <Styled.listCategoryView
+            horizontal={true}
+            showsVerticalScrollIndicator={false}
+          >
+            <ListItem
+              list={Object.entries(lists.life)}
+              navigation={navigation}
+            />
+          </Styled.listCategoryView>
+        </Styled.listBox>
       </KeyboardAwareScrollView>
     </Styled.container>
   );
@@ -81,6 +94,7 @@ const Styled = {
   `,
   listTitle: styled.TouchableOpacity`
     padding-left: 15px;
+    width: flt-content;
   `,
   listTitleText: styled.Text`
     font-size: 30px;

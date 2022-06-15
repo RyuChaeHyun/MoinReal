@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styled from 'styled-components/native';
 import DetailLabel from "../../components/Market/DetailLabel";
-import DetailProfile_User from "../../components/common/Detail/DetailProfile_User";
+// import DetailProfile_User from "../../components/common/Detail/DetailProfile_User";
 import theme from "../../theme";
 
 const JobFindingDetail_User = () => {

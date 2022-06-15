@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import JobInputLabel from "../../components/JobOpening/JobInputLabel";
 import JobInputLabel2 from "../../components/JobOpening/JobInputLabel_2";
 import TitleText from "../../components/common/TitleText/TitleText";
-import DetailProfile_User from "../../components/common/Detail/DetailProfile_User";
+// import DetailProfile_User from "../../components/common/Detail/DetailProfile_User";
 
 const JobOpeningDetail_User =()=>{
 
@@ -23,7 +23,7 @@ const JobOpeningDetail_User =()=>{
                 <JobInputLabel2 label="복리후생" content="산재보험, 야간근무수당, 국민연금"/>
 
                 <Styled.title>채용담당자</Styled.title>
-                <DetailProfile_User url = ""/>
+                {/* <DetailProfile_User url = ""/> */}
             </Styled.styleview>
         </KeyboardAwareScrollView>
 

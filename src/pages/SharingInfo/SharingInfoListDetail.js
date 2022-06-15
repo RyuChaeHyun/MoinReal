@@ -1,19 +1,19 @@
-import { View, Text, Image, ScrollView} from 'react-native';
-// import { ScrollView } from 'react-native';
+import { View } from 'react-native';
 import styled from 'styled-components/native';
-import React, {Component} from'react';
+import React from'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import ListItem from '../../components/sharingInfo/ListItem';
 // import theme from '../../theme';
 
-const SharingInfoTip = ({route, navigation} ) => {
-    console.log(route.params);
+const SharingInfoListDetail = ({route, navigation} ) => {
+    const {pageTitle, pageSubTitle, list} = route.params;
+    console.log(`pageTitle, pageSubTitle, list : ${pageTitle}, ${pageSubTitle}, ${list}`);
     return (
         <Styled.container>
             <KeyboardAwareScrollView extraScrollHeight={10}>
-                <Styled.Title>생활꿀팁</Styled.Title>
-                <Styled.Subtitle>꿀팁! 공유해봐요~</Styled.Subtitle>
-            <ListItem />
+                <Styled.Title>{pageTitle}</Styled.Title>
+                <Styled.Subtitle>{pageSubTitle}</Styled.Subtitle>
+                <ListItem list={list} navigation={navigation} />
             </KeyboardAwareScrollView>
         </Styled.container>
     )
@@ -24,6 +24,7 @@ const Styled = {
         background-color : white;
         flex :1;
     `,
+
     Subtitle : styled.Text`
     font-size: 16px;
     color: black;
@@ -40,6 +41,5 @@ const Styled = {
 `,
 }
 
-export default SharingInfoTip;
+export default SharingInfoListDetail;
 
-//theme처리도 해야하고. 
