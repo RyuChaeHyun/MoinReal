@@ -17,6 +17,7 @@ import SharingInfoRestaurant from './pages/SharingInfo/SharingInfoRestaurant';
 import SharingInfoCafe from './pages/SharingInfo/SharingInfoCafe';
 import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
 import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
+import HeaderTab from './components/common/Tab/HeadeTab';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -24,6 +25,7 @@ import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 // none은 name과 component만 들어가고, basic은 name, component, title이 들어가고, home은 name, component만 들어감.
 const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
+  {type: 'none', name: 'Tab', component: HeaderTab},
   {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
   {type: 'basic', name:'MyPage', component: MyPage, title:'마이페이지'},
   {type: 'basic', name:'MyPageEdit', component: MyPageEdit, title:'마이페이지 수정'},

@@ -23,7 +23,8 @@ const Signin = ({navigation}) => {
             // Signed in
             const user = userCredential.user;
             setUser(user);
-            navigation.push('SharingInfoList', {
+            console.log(user);
+            navigation.push('Tab', {
                 userId: user,
             })
             // ...
