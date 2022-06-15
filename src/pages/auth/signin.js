@@ -7,8 +7,7 @@ import styled from 'styled-components/native';
 import Input from "../../components/common/Input/Input.js";
 import Button from '../../components/common/Button/Button';
 import { Alert } from 'react-native';
-// import { ImageBackground } from "react-native";
-// import backimage from '../../../assets/Background.png';
+import { ImageBackground } from "react-native";
 
 const Signin = ({navigation}) => {
     const [ email, setEmail ] = useState('');
@@ -61,18 +60,12 @@ const Signin = ({navigation}) => {
     }
 
     return (
-        // <ImageBackground style={{width:"100%", height:"100%"}} source=require({backimage}) resizeModel="cover">
-        <Styled.container>
+         <Styled.container>
+            <ImageBackground source={require("../../../assets/background2.png")} style={{width:'100%', height:'100%'}}>
             <Styled.innerContainer>
-                <Styled.text>
-                    여기 MOIN 여러분을 위한 정보
-                </Styled.text>
-                <Styled.text>
-                    다양한 정보가 MOIN 곳
-                </Styled.text>
-                <Styled.logoText>
-                    MOIN
-                </Styled.logoText>
+                <Styled.text/>
+                <Styled.text/>
+                <Styled.logoText/>
             </Styled.innerContainer>
             <Styled.innerContainer>
                 <Input title={'email'} placeholder={'이메일을 입력해주세요'} onChangeSetText={setEmail} />
@@ -91,6 +84,7 @@ const Signin = ({navigation}) => {
                     }}
                 />
             </Styled.innerContainer>
+            </ImageBackground>
         </Styled.container>
         // </ImageBackground>
     );
@@ -104,6 +98,7 @@ const Styled = {
         height: 100%;
         width: 100%;
         padding: 30px;
+        background-image:url(backimage);
         background: ${theme.colors.beige};
     `,
     innerContainer: styled.View`
