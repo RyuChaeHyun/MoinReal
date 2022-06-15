@@ -75,7 +75,7 @@ const Styled = {
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    justifycontent: center;
+    justify-content: center;
   `,
 };
 
