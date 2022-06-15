@@ -8,11 +8,7 @@ import ListItem from '../../components/sharingInfo/ListItem';
 import Button from './../../components/common/Button/Button';
 
 
-// const [isSelect, setSelect] = useState([false, false, false]);
-//가로 슬라이드 
-//
-
-const listItens = [
+const listItems = [
     {name : '맛집', link: 'SharingInfoRestaurant'},
     {name : '카페', link: 'SharingInfoCafe'},
     {name : '생활꿀팁', link: 'SharingInfoTip'},
@@ -29,7 +25,7 @@ const SharingInfoList = ({navigation} ) => {
             </Styled.menu>
             <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
             <KeyboardAwareScrollView extraScrollHeight={10} >
-                {listItens.map(item=>(
+                {listItems.map(item=>(
                     <Styled.listBox key={item.name}>
                         <Styled.listTitle onPress = {()=> navigation.push(item.link)}>
                             <Styled.listTitleText>{item.name}</Styled.listTitleText>
