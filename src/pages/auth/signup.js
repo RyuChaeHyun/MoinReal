@@ -125,11 +125,6 @@ const Signup = ({navigation}) => {
           onChangeSetText={setPhone}
           keyboardType="numeric"
         />
-        <ProfilePicker
-          title={"프로필 사진"}
-          image={null}
-          setImage={setImageUrl}
-        />
       </Styled.innerContainer>
     </FormScrollView>
   );
