@@ -6,15 +6,16 @@ import theme from '../../theme';
 import styled from 'styled-components/native';
 import Input from "../../components/common/Input/Input.js";
 import Button from '../../components/common/Button/Button';
+import { Alert } from 'react-native';
 
 const Signin = ({navigation}) => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ user, setUser ] = useState(null);
-    const [submitPressed, setSubmitPressed] = useState(false);
     initializeApp(config);
     
-    useEffect(()=>{
+    const onSubmitting =(e) => {
+        e.preventDefault();
         if(user) return;
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
@@ -30,12 +31,32 @@ const Signin = ({navigation}) => {
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
+            switch (errorCode) {
+              case 'auth/internal-error':
+                alert('인증 서버에서 요청을 처리하던 중에 예기치 않은 오류가 발생했습니다.') // for web
+                Alert.alert("인증 서버에서 요청을 처리하던 중에 예기치 않은 오류가 발생했습니다."); // for android & iphone
+                break;
+              case 'auth/invalid-email':
+                alert('이메일 형식이 올바르지 않습니다.') // for web
+                Alert.alert("이메일 형식이 올바르지 않습니다."); // for android & iphone
+                break;
+              case 'auth/invalid-password':
+                alert('비밀번호 형식이 올바르지 않습니다.') // for web
+                Alert.alert("비밀번호 형식이 올바르지 않습니다."); // for android & iphone
+                break;
+              case 'auth/user-not-found':
+                alert('해당 사용자가 존재하지 않습니다. 이메일을 다시 확인해주세요.') // for web
+                Alert.alert('해당 사용자가 존재하지 않습니다. 이메일을 다시 확인해주세요.'); // for android & iphone
+                break;
+              default:
+                alert(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`) // for web
+                Alert.alert(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`); // for android & iphone
+                console.log(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`);
+                break;
+            }
         });
-        console.log(`Credentials ${email} [${password}]`);
-        setSubmitPressed(false);
-    },[submitPressed])
+
+    }
 
     return (
         <Styled.container>
@@ -56,7 +77,7 @@ const Signin = ({navigation}) => {
                 <Button
                     shape={'Round'}
                     title={'Login'}
-                    onPress={()=> setSubmitPressed(true)}
+                    onPress={(e)=> onSubmitting(e)}
                     />
                 <Button
                     shape={'Round'}
