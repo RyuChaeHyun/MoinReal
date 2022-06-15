@@ -20,6 +20,7 @@ import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
 import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
+import { useEffect, useState } from 'react';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -49,8 +50,13 @@ export default function App() {
   const Stack = createNativeStackNavigator();  
   const ref = React.useRef(null);
 
+  const toMyPage = () =>{
+    if(ref===undefined || ref===null) return;
+    console.log("REF Current : ",ref.current); 
+    ref.current.navigate('MyPage');
+  }
+
   return (
-    <>
         <NavigationContainer ref={ref}>
           <Stack.Navigator 
             initialRouteName = 'Signin'
@@ -90,7 +96,7 @@ export default function App() {
                           fontSize: theme.fontSize.lg,
                         },
                         headerLeft: ()=><LogoTitle />,
-                        headerRight:  ()=><HeaderRight toMypage={() => ref.current && ref.current.navigate('MyPage')}/>,
+                        headerRight:  ()=><HeaderRight toMypage={toMyPage}/>,
                       }}
                     />
                   );
@@ -107,7 +113,6 @@ export default function App() {
               })}
           </Stack.Navigator>
       </NavigationContainer>        
-    </>
   );
 }
 
