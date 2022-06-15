@@ -4,13 +4,14 @@ import InputLabel from "../sharingInfo/InputLabel";
 import InputWithImage from "../sharingInfo/InputWithImage";
 import preimage from '../../../assets/favicon.png'
 import styled from 'styled-components/native';
+import Button from '../common/Button/Button';
 
 const StyledView = styled.View`
     background-color:#ffffff;
     height:vh(100);
 `;
 
-const MarketList = ({route} ) => {
+const MarketCreate = ({route} ) => {
     console.log(route.params);
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
@@ -43,4 +44,4 @@ const MarketList = ({route} ) => {
 };
 
 
-export default MarketList;
+export default MarketCreate;
