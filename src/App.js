@@ -21,6 +21,7 @@ import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
 import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
 import { useEffect, useState } from 'react';
+import SharingInfoDetail from './pages/SharingInfo/SharingInfoDetail';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -34,6 +35,7 @@ const pageHeaderList = [
   {type: 'basic', name:'MyPageEdit', component: MyPageEdit, title:'마이페이지 수정'},
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'basic', name:'SharingInfoCreate', component:SharingInfoCreate, title:'글쓰기'},
+  {type: 'basic', name:'SharingInfoDetail', component:SharingInfoDetail, title:'DETAIL'},
   {type: 'basic', name:'SharingInfoRestaurant', component:SharingInfoRestaurant, title:'맛집'},
   {type: 'basic', name:'SharingInfoCafe', component:SharingInfoCafe, title:'꿀카공'},
   {type: 'basic', name:'SharingInfoTip', component:SharingInfoTip, title:'꿀팁'},
