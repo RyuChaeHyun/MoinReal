@@ -13,7 +13,7 @@ const PhotoButton =({onPress}) =>{
 const DetailProfile= ({url})=>{
     return(
         <Styled.wrapper>
-            <StyledImage source = {{url: url}}/>
+            <Styled.styledImage source = {{url: url}}/>
             <Styled.name>Laura</Styled.name>
             <PhotoButton/>
         </Styled.wrapper>

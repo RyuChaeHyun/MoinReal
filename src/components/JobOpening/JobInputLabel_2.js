@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
-    flex-direction:row;
+    flex-direction:column;
     width:100%;
     background-color:#ffffff;
-    margin:5px 0;
+    margin:10px 0;
     padding: 10px 20px;
 `;
 
@@ -21,15 +21,16 @@ const GetData = styled.Text`
     padding-left:0.5rem;
     padding-right:0.5rem;
     color: gray;
-    text-align:right;
+    margin-top:3px;
+    text-align:left;
     flex:1;
 `;
 
-const JobInputLabel = ({label, content})=>(
+const JobInputLabel2 = ({label, content})=>(
     <Wrapper>
         <Label>{label}</Label>
         <GetData>{content}</GetData>
     </Wrapper>
 );
 
-export default JobInputLabel;
+export default JobInputLabel2;

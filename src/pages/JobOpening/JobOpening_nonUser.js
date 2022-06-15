@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import JobInputLabel from "../../components/JobOpening/JobInputLabel";
 import JobInputLabel2 from "../../components/JobOpening/JobInputLabel_2";
 import TitleText from "../../components/common/TitleText/TitleText";
-import DetailProfile_User from "../../components/common/Detail/DetailProfile_User";
+import DetailProfile from "../../components/common/Detail/DetailProfile";
 
 const StyledView = styled.View`
     background-color:#ffffff;
@@ -17,7 +17,7 @@ const StyledTitle = styled.Text`
     font-weight:1000;
 `;
 
-const JobOpeningDetail_User =()=>{
+const JobOpeningDetail_nonUser =()=>{
 
 
     return(
@@ -35,11 +35,11 @@ const JobOpeningDetail_User =()=>{
                 <JobInputLabel2 label="복리후생" content="산재보험, 야간근무수당, 국민연금"/>
 
                 <StyledTitle>채용담당자</StyledTitle>
-                <DetailProfile_User url = ""/>
+                <DetailProfile url = ""/>
             </StyledView>
         </KeyboardAwareScrollView>
 
     );
 };
 
-export default JobOpeningDetail_User;
+export default JobOpeningDetail_nonUser;
