@@ -4,7 +4,7 @@ import InputWithImage from './InputWithImage';
 import InputLabel from './InputLabel';
 import InputDropBox from './InputDropBox';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import Button from './../../components/common/Button/Button';
+import Button from '../../components/common/Button/Button';
 
 const StyledView = styled.View`
     height:vh(100);
