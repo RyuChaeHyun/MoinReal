@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import ImageUploader from '../../components/common/ImageUploader';
+// import ImageUploader from '../../components/common/ImageUploader/Index';
+// import ImageUploader from '../common/ImageUploader/ImageUp';
+// import ImageUp from '../common/ImageUploader/ImageUp';
 import theme from '../../theme';
+
 
 const Styled = {
     container: styled.View`
@@ -22,7 +25,7 @@ const InputWithImage = ({label, ...props}) => {
     return (
         <Styled.container>
             <Styled.label>{label}</Styled.label>
-            <ImageUploader {...props} />
+            <ImageUp {...props} />
         </Styled.container>
     );
 };
