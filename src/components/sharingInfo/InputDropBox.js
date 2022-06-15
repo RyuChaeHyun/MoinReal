@@ -23,10 +23,6 @@ const InputDropBox = ({label, category, setCategory}) => {
         <Styled.container>
             <Styled.label>{label}</Styled.label>
             <RNPickerSelect
-                placeholder={{
-                    label:'맛집',
-                    value:'restaurant',
-                }}
                 style={pickerSelectStyles}
                 value={category}
                 onValueChange={(value) => setCategory(value)}
