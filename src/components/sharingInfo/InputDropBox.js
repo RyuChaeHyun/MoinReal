@@ -15,7 +15,6 @@ const Styled = {
         font-size: ${theme.fontSize.md}px;
         font-weight: bold;
         color: black
-        padding-left: 16px;
     `,
 }
 
@@ -24,14 +23,10 @@ const InputDropBox = ({label, category, setCategory}) => {
         <Styled.container>
             <Styled.label>{label}</Styled.label>
             <RNPickerSelect
-                placeholder={{
-                    label:'카테고리를 선택하세요',
-                    value:' ',
-                }}
                 style={pickerSelectStyles}
                 value={category}
                 onValueChange={(value) => setCategory(value)}
-                useNativeAndroidPickerStyle={false}
+                useNativeAndroidPickerStyle={true}
                 items={[
                     { label: '맛집', value: 'restaurant' },
                     { label: '카페', value: 'cafe' },
@@ -43,12 +38,22 @@ const InputDropBox = ({label, category, setCategory}) => {
 };
 
 const pickerSelectStyles = StyleSheet.create({
+    inputWeb: {
+        fontSize: 16,
+        height: 50, 
+        width: '100%', 
+        color: theme.colors.dark,
+        borderColor: theme.colors.gray, 
+        borderWidth: 1, 
+        borderRadius: 12,
+        padding: 10
+    },
     inputIOS: {
         fontSize: 16,
         height: 50, 
-        width: 300, 
-        color: '#000000',
-        borderColor: '#000000', 
+        width: '100%', 
+        color: theme.colors.dark,
+        borderColor: theme.colors.gray, 
         borderWidth: 1, 
         borderRadius: 12,
         padding: 10
@@ -56,9 +61,9 @@ const pickerSelectStyles = StyleSheet.create({
     inputAndroid: {
         fontSize: 16,
         height: 50, 
-        width: 300, 
-        color: '#000000',
-        borderColor: '#000000', 
+        width: '100%', 
+        color: theme.colors.dark,
+        borderColor: theme.colors.gray, 
         borderWidth: 1, 
         borderRadius: 12,
         padding: 10

@@ -29,7 +29,7 @@ const Styled = {
     color: black;
     font-weight: 400;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 25px;
 `,
     Title : styled.Text`
     font-size: 30px;

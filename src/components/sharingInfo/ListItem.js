@@ -62,10 +62,11 @@ const Styled = {
     background-color: ${theme.colors.beige};
   `,
   content: styled.View`
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     height: 60px;
+    padding: 8px;
   `,
   description: styled.Text`
     color: black;

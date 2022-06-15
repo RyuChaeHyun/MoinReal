@@ -39,7 +39,7 @@ const SharingInfoList = ({ navigation }) => {
               });
             }}
           >
-            <Styled.listTitleText>{"맛집"}</Styled.listTitleText>
+            <Styled.listTitleText>{"맛집 >"}</Styled.listTitleText>
           </Styled.listTitle>
           <Styled.listCategoryView
             horizontal={true}
@@ -63,7 +63,7 @@ const SharingInfoList = ({ navigation }) => {
               });
             }}
           >
-            <Styled.listTitleText>{"카페"}</Styled.listTitleText>
+            <Styled.listTitleText>{"카페 >"}</Styled.listTitleText>
           </Styled.listTitle>
           <Styled.listCategoryView
             horizontal={true}
@@ -81,13 +81,13 @@ const SharingInfoList = ({ navigation }) => {
             onPress={(e) => {
               e.preventDefault();
               navigation.push("SharingInfoListDetail", {
-                pageTitle: "생활꿀팁",
+                pageTitle: "생활꿀팁 >",
                 pageSubTitle: "꿀팁! 공유해봐요~",
                 list: Object.entries(lists.life),
               });
             }}
           >
-            <Styled.listTitleText>{"생활꿀팁"}</Styled.listTitleText>
+            <Styled.listTitleText>{"생활꿀팁 >"}</Styled.listTitleText>
           </Styled.listTitle>
           <Styled.listCategoryView
             horizontal={true}
@@ -106,6 +106,7 @@ const SharingInfoList = ({ navigation }) => {
 
 const Styled = {
   container: styled.View`
+    flex: 1;
     background-color: ${theme.colors.white};
   `,
   listBox: styled.View`

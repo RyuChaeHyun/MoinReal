@@ -1,13 +1,11 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useRef, useState } from "react";
-import { Alert, Text, View } from "react-native";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import React, { useState } from "react";
+import { Alert } from "react-native";
 import styled from "styled-components/native";
 import Input from "../../components/common/Input/Input";
 import TitleText from "../../components/common/TitleText/TitleText";
 import theme from "../../theme";
 import FormScrollView from "../../components/common/FormScrollView/FormScrollView";
-import ProfilePicker from "../../components/auth/ProfilePicker/ProfilePicker";
 import { updateData } from './../../firebase/database';
 
 const Signup = ({navigation}) => {
@@ -24,6 +22,7 @@ const Signup = ({navigation}) => {
   // onSubmit
   const onSubmitting = () => {
     const auth = getAuth();
+    console.log("submitting");
     if (!checkValidPassword()) return;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -42,6 +41,8 @@ const Signup = ({navigation}) => {
           phone,
           imageUrl,
         };
+
+        console.log('signup user : ',user);
 
         // user.uid로 column명이 생겨요
         updateData('users/',user.uid,userData);
