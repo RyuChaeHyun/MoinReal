@@ -8,7 +8,7 @@ import JobFindingList from './pages/JobFinding/JobFindingList';
 import JobOpeningList from './pages/JobOpening/JobOpeningList';
 import Signin from './pages/auth/signin';
 import Signup from './pages/auth/signup';
-import MarketList from './components/Market/MarketList';
+import MarketList from './pages/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 import MyPage from './pages/auth/MyPage';
@@ -19,7 +19,8 @@ import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
 import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
-
+import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
+import JobOpeningDetail_nonUser from './pages/JobOpening/JobOpening_nonUser';
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
 // name은 절대 중복되면 안됨.
@@ -35,10 +36,13 @@ const pageHeaderList = [
   {type: 'basic', name:'SharingInfoRestaurant', component:SharingInfoRestaurant, title:'맛집'},
   {type: 'basic', name:'SharingInfoCafe', component:SharingInfoCafe, title:'꿀카공'},
   {type: 'basic', name:'SharingInfoTip', component:SharingInfoTip, title:'꿀팁'},
-  {type: 'home', name:'MarketList', component:MarketList},
+  {type: 'basic', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
-  {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},]
+  {type: 'basic', name:'JobOpeningDetail', component:JobOpeningDetail_User},
+  {type: 'basic', name:'JobOpeningDetail_nonUser', component:JobOpeningDetail_nonUser},
+  // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
+]
 
 export default function App() {
   // basic setting
@@ -50,7 +54,7 @@ export default function App() {
     <>
         <NavigationContainer ref={ref}>
           <Stack.Navigator 
-            initialRouteName = 'JobOpeningDetail'
+            initialRouteName = 'Signin'
             screenOptions={{
               title: 'Moin',
               headerTintColor: theme.colors.dark,

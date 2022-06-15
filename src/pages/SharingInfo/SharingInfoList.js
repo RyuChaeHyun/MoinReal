@@ -5,7 +5,6 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ListItem from '../../components/sharingInfo/ListItem';
 import Button from './../../components/common/Button/Button';
 
-
 const listItems = [
     {name : '맛집', link: 'SharingInfoRestaurant'},
     {name : '카페', link: 'SharingInfoCafe'},
@@ -34,7 +33,7 @@ const SharingInfoList = ({navigation} ) => {
 
 const Styled = {
     container : styled.View`
-    background-color : white;
+        background-color : ${theme.colors.white};
     `,
     listBox: styled.View`
         display: flex;
@@ -52,15 +51,7 @@ const Styled = {
     listCategoryView : styled.ScrollView`
         height : 230px;
     `,
-    squareButtonContainer: styled.TouchableOpacity`
-        background-color: ${theme.colors.white};
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-        width: fit-content;
-        padding: 10px;
-        align-self: center;
-    `,
+    
 }
 
 export default SharingInfoList;
