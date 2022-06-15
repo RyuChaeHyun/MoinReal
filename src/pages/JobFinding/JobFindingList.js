@@ -9,18 +9,14 @@ import FindingList from '../../components/JobFinding/FindingList';
 
 
 
-const JobFindingList = ( ) => {
+const JobFindingList = ( {navigation}) => {
     return (
-        <Styled.container>
-            <Styled.menu>
-                <Styled.menuItem>정보공유</Styled.menuItem>
-                <Styled.menuItem>구인</Styled.menuItem>
-                <Styled.menuItem>구직</Styled.menuItem>
-                <Styled.menuItem>중고거래</Styled.menuItem>
-            </Styled.menu>           
-            <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
-            <KeyboardAwareScrollView extraScrollHeight={10} >
+        <Styled.container>    
+            <Styled.topBar>
                 <Styled.Title>구직</Styled.Title>
+                <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('JobFindingCreate')}/>
+            </Styled.topBar>   
+            <KeyboardAwareScrollView extraScrollHeight={10} >
                     <FindingList/>
             </KeyboardAwareScrollView>
         </Styled.container>
@@ -29,56 +25,22 @@ const JobFindingList = ( ) => {
 const Styled = {
     container : styled.View`
         background-color : ${theme.colors.white};
+        flex:1;
+    `,
+    topBar: styled.View`
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items : center;
+        margin-bottom : 18px;
+
     `,
     Title : styled.Text`
-        font-size: 30px;
+        font-size: 28px;
         color: black;
-        font-weight: 600;
+        font-weight: 800;
         margin-top: 20px;
-        margin-left: 25px;
+        margin-left: 20px;
 `,
-    menuItem : styled.Text`
-        display: inline-block;
-        color: black;
-        font-size: 1rem;
-        font-weight : 800;
-        line-height: 3rem;
-        width: 25%;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        text-decoration: none;
-    `,
-    menu : styled.View`
-        display:flex;
-        flex-flow: row;
-        borderBottomWidth : 2;
-        borderBottomColor : gray;
-    `,
-    listBox: styled.View`
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    `,
-    listTitle : styled.TouchableOpacity`
-        padding-left: 15px;
-    `,
-    listTitleText : styled.Text`
-        font-size : 30px;
-        font-weight: 600;
-        color: black;
-    `,
-    listCategoryView : styled.ScrollView`
-        height : 230px;
-    `,
-    // squareButtonContainer: styled.TouchableOpacity`
-    //     background-color: ${theme.colors.white};
-    //     justify-content: center;
-    //     align-items: center;
-    //     border-radius: 4px;
-    //     width: fit-content;
-    //     padding: 10px;
-    //     align-self: center;
-    // `,
 }
 export default JobFindingList;

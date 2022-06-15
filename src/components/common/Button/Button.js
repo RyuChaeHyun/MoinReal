@@ -52,11 +52,14 @@ const Styled = {
     `,
 
     textButtonContainer : styled.TouchableOpacity`
-        flex-direction : row-reverse;
+        flex-direction : row;
         margin-top : 13px;
         textDecorationLine: underline;
         margin-right : 10px;
-
+        width: fit-content;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     `,
     text: styled.Text`
         font-weight: bold;

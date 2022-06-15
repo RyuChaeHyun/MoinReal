@@ -10,17 +10,21 @@ import ListItem from '../../components/sharingInfo/ListItem';
 const SharingInfoCafe = ({route, navigation} ) => {
     console.log(route.params);
     return (
-        <KeyboardAwareScrollView extraScrollHeight={10}>
-            <Styled.Title>카페</Styled.Title>
-            <Styled.Subtitle>카페 정보 자유롭게 공유해봐요~</Styled.Subtitle>
-           <ListItem />
-    </KeyboardAwareScrollView>
+        <Styled.container>
+            <KeyboardAwareScrollView extraScrollHeight={10}>
+                <Styled.Title>카페</Styled.Title>
+                <Styled.Subtitle>카페 정보 자유롭게 공유해봐요~</Styled.Subtitle>
+                <ListItem />
+            </KeyboardAwareScrollView>
+        </Styled.container>
     )
 }
 
 const Styled = {
-    Container : styled.View``
-, 
+    container : styled.View`
+        background-color : white;
+        flex :1;
+    `,
     Item : styled.View`
     background: white;
     border-radius: 18px;

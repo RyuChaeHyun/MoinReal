@@ -20,7 +20,7 @@ import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
 import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
-
+import JobFindingCreate from './pages/JobFinding/JobFindingCreate';
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
 // name은 절대 중복되면 안됨.
@@ -38,9 +38,10 @@ const pageHeaderList = [
   {type: 'basic', name:'SharingInfoTip', component:SharingInfoTip, title:'꿀팁'},
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
+  {type: 'basic', name:'JobFindingCreate', component:JobFindingCreate, title:'구직 글쓰기'},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
   {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},
-  // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
+  {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
 ]
 
 export default function App() {

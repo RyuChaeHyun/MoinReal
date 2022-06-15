@@ -74,7 +74,7 @@ const Styled={
         right:45;
         width:30px;
         height:30px;
-        border-radius:5pc;
+        border-radius:5px;
         justify-content:center;
         align-items:center;
         `,
@@ -86,7 +86,7 @@ const Styled={
         right:13;
         width:30px;
         height:30px;
-        border-radius:5pc;
+        border-radius:5px;
         justify-content:center;
         align-items:center;
     `,

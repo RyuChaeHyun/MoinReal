@@ -14,7 +14,9 @@ const listItems = [
 const SharingInfoList = ({navigation} ) => {
     return (
         <Styled.container>
-            <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
+            <Styled.topBar>
+                <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
+            </Styled.topBar>
             <KeyboardAwareScrollView extraScrollHeight={10} >
                 {listItems.map(item=>(
                     <Styled.listBox key={item.name}>
@@ -32,8 +34,16 @@ const SharingInfoList = ({navigation} ) => {
 }
 
 const Styled = {
+    topBar : styled.View`
+        flex-direction : row;
+        align-items : flex-end;
+        margin-left : auto;
+        // justify-content: space-between;
+
+    `,
     container : styled.View`
         background-color : ${theme.colors.white};
+        flex:1;
     `,
     listBox: styled.View`
         display: flex;

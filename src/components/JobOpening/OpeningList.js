@@ -14,51 +14,48 @@ const dataList = [
 ];
 
   
-  const Item = ({ title, detail, income}) => (
-    <Styled.item>
-      <Styled.title>{title}</Styled.title>
-      <Styled.detail>{detail}</Styled.detail>
-      <Styled.income>{income}</Styled.income>
-    </Styled.item>
-  );
-  
-  const OpeningList = () => {
-    const renderItem = ({ item }) => (
-      <Item title={item.title} detail = {item.detail} income = {item.income}/>
-    );
-  
+  const OpeningList = () => {  
     return (
       <Styled.container>
-        <FlatList
-          data={dataList}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        />
+        {dataList.map(item=> (
+          <Styled.listItem key={item.id}>
+            <Styled.title>{item.title}</Styled.title>
+            <Styled.detail>{item.detail}</Styled.detail>
+            <Styled.income>{item.income}</Styled.income>
+            <Styled.border></Styled.border>
+          </Styled.listItem>
+        ))}
       </Styled.container>
     );
-  }
+  };
   
   const Styled = {
-    container : styled(SafeAreaView)`
-        display: flex ;
-        margin-top : 20px;
+    container: styled.View`
+      flex: 1;
+      display : flex;
+      flex-direction : column;
     `,
-    item : styled.View`
-        background-color : ${theme.colors.white};
-        padding : 20px;
-        margin-top : 6px;
-        margin-left : 10px;
+    border : styled.View`
+      margin-top :30px;
+      width : 100%;
+      height : 1.5px;
+      background-color : ${theme.colors.gray};
+    `,
+    listItem : styled.View`
+      width : 100%;
+      padding :13px;
     `,
     title : styled.Text`
-        font-size : 20px;
-        font-weight: 550;
+      font-size : 19px;
+      font-weight: 550;
     `, 
     detail : styled.Text`
-        font-size : 15px;
+      font-size : 16px;
     `,
     income : styled.Text`
-        font-size : 9px;
+      font-size : 13px;
     `,
+
   };
   
   export default OpeningList;
