@@ -11,11 +11,11 @@ const dataList = [
     {url:'사진주소5', detail:'detail5....'},
     {url:'사진주소6', detail:'detail6....'},
 ]
-const data = {
-    id : nanoid(),
-    image : "사진주소", 
-    detail : "사세요..", 
-}
+// const data = {
+//     id : nanoid(),
+//     image : "사진주소", 
+//     detail : "사세요..", 
+// }
 
 const MarketListItem = () => {
   return (
@@ -39,16 +39,18 @@ const MarketListItem = () => {
 };
 
 const Styled = {
-  container: styled.View``,
+  container: styled.View`
+
+  `,
   item: styled.View`
     background: white;
     border-radius: 18px;
     margin: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    width : 150px;   
+    width : 160px;   
 `,
-    cover : styled.View`
+  cover : styled.View`
     width: 100%;
     height: 150px;
     border-top-left-radius: 18px;
@@ -75,7 +77,8 @@ const Styled = {
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    justifycontent: center;
+    justify-content: center;
+  
   `,
 };
 

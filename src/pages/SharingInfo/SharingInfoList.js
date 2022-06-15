@@ -4,6 +4,7 @@ import theme from '../../theme';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import ListItem from '../../components/sharingInfo/ListItem';
 import Button from './../../components/common/Button/Button';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const listItems = [
@@ -15,6 +16,12 @@ const listItems = [
 const SharingInfoList = ({navigation} ) => {
     return (
         <Styled.container>
+            <Styled.menu>
+                <Styled.menuItem>정보공유</Styled.menuItem>
+                <Styled.toOpening onPress = {() => navigation.push('JobOpeningList')}><Styled.menuItem>구인</Styled.menuItem></Styled.toOpening>
+                <Styled.toFinding onPress = {() => navigation.push('JobFindingList')}><Styled.menuItem>구직</Styled.menuItem></Styled.toFinding>
+                <Styled.toMarket onPress = {() => navigation.push('MarketList')}><Styled.menuItem>중고거래</Styled.menuItem></Styled.toMarket>
+            </Styled.menu>
             <Button shape={'Text'} title={"글쓰기"} onPress = {()=> navigation.push('SharingInfoCreate')}/>
             <KeyboardAwareScrollView extraScrollHeight={10} >
                 {listItems.map(item=>(
@@ -34,7 +41,7 @@ const SharingInfoList = ({navigation} ) => {
 
 const Styled = {
     container : styled.View`
-    background-color : white;
+        background-color : ${theme.colors.white};
     `,
     listBox: styled.View`
         display: flex;
@@ -52,15 +59,14 @@ const Styled = {
     listCategoryView : styled.ScrollView`
         height : 230px;
     `,
-    squareButtonContainer: styled.TouchableOpacity`
-        background-color: ${theme.colors.white};
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-        width: fit-content;
-        padding: 10px;
-        align-self: center;
+    toOpening : styled.TouchableOpacity`
     `,
+    toFinding : styled.TouchableOpacity`
+    
+    `,
+    toMarket : styled.TouchableOpacity`
+    `,
+    
 }
 
 export default SharingInfoList;
