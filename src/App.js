@@ -44,6 +44,9 @@ const pageHeaderList = [
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
   {type: 'basic', name:'JobOpeningDetail', component:JobOpeningDetail_User},
   {type: 'basic', name:'JobOpeningDetail_nonUser', component:JobOpeningDetail_nonUser},
+  {type: 'basic', name:'JobFindingDetail_User', component:JobFindingDetail_User},
+  {type: 'basic', name:'JobFindingDetail_nonUser', component:JobFindingDetail_nonUser},
+ 
   // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
 ]
 
