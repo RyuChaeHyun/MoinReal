@@ -8,6 +8,14 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Alert } from 'react-native';
 
 const SharingInfoDetail = ({ route, navigation }) => {
+  // db로 부터 데이터를 가져오고(setData) 이를 사용함(data)
+  const auth = getAuth();
+  const [userData, setUserData] = useState({
+    uid: "",
+    username: "",
+    imageUrl: "",
+  });
+  // post관련
   const [data, setData] = useState({
     postId: "",
     category: "",
@@ -16,20 +24,16 @@ const SharingInfoDetail = ({ route, navigation }) => {
     title: "",
     writerId: "",
   });
+
+  
   useEffect(() => {
-    const { postId, postData } = route.params;
-    setData({ postId: postId, ...postData });
+    const postData = route.params;
+    console.log(postData);
+    setData({ ...postData });
   }, []);
 
-  // db로 부터 데이터를 가져오고(setData) 이를 사용함(data)
-  const [userData, setUserData] = useState({
-    uid: "",
-    username: "",
-    profileUrl: "",
-  });
 
   // 유저 정보 가져옴
-  const auth = getAuth();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -46,11 +50,6 @@ const SharingInfoDetail = ({ route, navigation }) => {
     });
   }, []);
 
-//   const userData = {
-//     uid: "1234",
-//     url: "프로필 사진 주소",
-//     username: "테스트 이미지",
-//   };
   return (
     <Styled.container>
       <Styled.detailInfoBox>
@@ -60,9 +59,9 @@ const SharingInfoDetail = ({ route, navigation }) => {
         <Styled.category>{data.category}</Styled.category>
       </Styled.detailInfoBox>
       <DetailProfile
-        source={userData.profileUrl}
+        source={userData.imageUrl}
         username={userData.username}
-        sameUser={userData.uid == data.writerId}
+        sameUser={userData.uid === data.writerId}
       />
     </Styled.container>
   );

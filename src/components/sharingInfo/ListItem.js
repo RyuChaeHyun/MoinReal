@@ -5,20 +5,18 @@ import theme from "./../../theme";
 const ListItem = ({ list, navigation }) => {
   return (
     <Styled.container>
-      {list.map((item) => (
+      {list && list.map((item) => (
         <Styled.item
           key={item[0]}
           onPress={(e) => {
             e.preventDefault();
             navigation.push("SharingInfoDetail", {
-              postId: item[0],
-              postData: {
+                postId: item[0],
                 category: item[1].category,
                 detail: item[1].detail,
                 image: item[1].image,
                 title: item[1].title,
                 writerId: item[1].writerId,
-              },
             });
           }}
         >

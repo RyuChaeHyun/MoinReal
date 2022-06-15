@@ -13,9 +13,7 @@ import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 import MyPage from './pages/auth/MyPage';
 import MyPageEdit from './pages/auth/MyPageEdit';
-import SharingInfoRestaurant from './pages/SharingInfo/SharingInfoRestaurant';
-import SharingInfoCafe from './pages/SharingInfo/SharingInfoCafe';
-import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
+import SharingInfoListDetail from './pages/SharingInfo/SharingInfoListDetail';
 import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
 import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
@@ -24,6 +22,8 @@ import JobOpeningDetail_nonUser from './pages/JobOpening/JobOpening_nonUser';
 import { useEffect, useState } from 'react';
 import SharingInfoDetail from './pages/SharingInfo/SharingInfoDetail';
 import JobFindingCreate from './pages/JobFinding/JobFindingCreate';
+import JobFindingDetail_User from './pages/JobFinding/JobFindingDetail_User';
+import JobFindingDetail_nonUser from './pages/JobFinding/JobFindingDetail_nonUser';
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
 // name은 절대 중복되면 안됨.
@@ -37,9 +37,7 @@ const pageHeaderList = [
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'basic', name:'SharingInfoCreate', component:SharingInfoCreate, title:'글쓰기'},
   {type: 'basic', name:'SharingInfoDetail', component:SharingInfoDetail, title:'DETAIL'},
-  {type: 'basic', name:'SharingInfoRestaurant', component:SharingInfoRestaurant, title:'맛집'},
-  {type: 'basic', name:'SharingInfoCafe', component:SharingInfoCafe, title:'꿀카공'},
-  {type: 'basic', name:'SharingInfoTip', component:SharingInfoTip, title:'꿀팁'},
+  {type: 'basic', name:'SharingInfoListDetail', component:SharingInfoListDetail, title:'맛집'},
   {type: 'basic', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'basic', name:'JobFindingCreate', component:JobFindingCreate, title:'구직 글쓰기'},
@@ -49,7 +47,6 @@ const pageHeaderList = [
   {type: 'basic', name:'JobFindingDetail_User', component:JobFindingDetail_User},
   {type: 'basic', name:'JobFindingDetail_nonUser', component:JobFindingDetail_nonUser},
   // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
-  {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},
   {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
 ]
 
