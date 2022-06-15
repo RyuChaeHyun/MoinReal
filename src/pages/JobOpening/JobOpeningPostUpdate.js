@@ -8,7 +8,7 @@ import FormScrollView from './../../components/common/FormScrollView/FormScrollV
 import { getAuth } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
 
-const JobOpeningPostCreate = ({navigation}) => {
+const JobOpeningPostUpdate = ({navigation}) => {
     //유저 정보 가져오기
     const auth = getAuth();
     let uid = "";
@@ -21,9 +21,7 @@ const JobOpeningPostCreate = ({navigation}) => {
                 navigation.push("Signin");
             }
         });
-        return() => {
-            clearImmediate
-        }
+        
 
     },[])
     const [data, setData] = useState ({
@@ -111,4 +109,4 @@ const Styled = {
     `,
 }
 
-export default JobOpeningPostCreate;
+export default JobOpeningPostUpdate;
