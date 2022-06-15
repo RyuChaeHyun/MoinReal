@@ -1,4 +1,4 @@
-import { getDatabase, ref, onValue,get, child, push, set } from 'firebase/database';
+import { getDatabase, ref, onValue,get, child, push, set, update } from 'firebase/database';
 import { getAuth, updateProfile} from 'firebase/auth';
 
 // 자동으로 id생성 해준대용
@@ -8,19 +8,19 @@ export const createDataWithId = (table, column, data) =>{
 }
 
 // 자동으로 id생성 안해용 (column이 id가 됩니당)
-export const createData = (table, column, data) =>{
+export const updateData = (table, column, data) =>{
     const db = getDatabase();
     set(ref(db, table + column), data);
 }
 
-export const getData = (table, column) =>{
+export const getData = (table, column, setData) =>{
     const dbRef = ref(getDatabase());
     get(child(dbRef, `${table}/${column}`)).then((snapshot) => {
         if (snapshot.exists()) {
             const val = snapshot.val();
             const data = {data: val};
             console.log(data)
-            return data;
+            setData(data.data);
         } else {
             console.log("No data available");
         }

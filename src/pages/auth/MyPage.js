@@ -3,12 +3,18 @@ import Input from "./../../components/common/Input/Input";
 import theme from "./../../theme";
 import ProfileImage from "./../../components/auth/ProfileImage/ProfileImage";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getData } from "./../../firebase/database";
 
 const MyPage = ({ navigation }) => {
-  const auth = getAuth();
-  let uid = 0;
+  // get Data에 필요한 것들
+  // data 가져오게되면 강제 re-rendering해서 화면 다시 그림
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(()=> updateState({}),[]);
+  useEffect(()=>{
+      forceUpdate();
+  }, [data])
+  // db로 부터 데이터를 가져오고(setData) 이를 사용함(data)
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -18,23 +24,26 @@ const MyPage = ({ navigation }) => {
     profileUrl: '',
   })
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      uid = user.uid;
-      let ret = getData("users",uid);
-      if(ret!==null) {
-          setData(ret);
-          console.log("!!!!!!!!!!!")
-      }
-    } else {
-      // User is signed out (로그아웃되면 자동으로 signin가도록 설정)
-      navigation.push("SharingInfoList");
-    }
-  });
-  
+  // 유저 정보 가져옴
+  const auth = getAuth();
+  let uid = 0;
   useEffect(()=>{
-      console.log('mypage data ... ', data);
-  }, [data])
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        uid = user.uid;
+        getData("users",uid, setData);
+        if(data===null) {
+          alert("불러올 데이터가 없습니다.");
+          Alert.alert("불러올 데이터가 없습니다.");
+        }
+      } else {
+        // User is signed out (로그아웃되면 자동으로 signin가도록 설정)
+        navigation.push("Signin");
+      }
+    });
+  }, [])
+
+
 
   return (
     <FormScrollView
@@ -42,7 +51,7 @@ const MyPage = ({ navigation }) => {
       buttonType={"Round"}
       onPress={() => navigation.push("MyPageEdit")}
     >
-      <ProfileImage profileUrl={data.profileUrl} username={data.username} />
+      <ProfileImage source={data.profileUrl} username={data.username} />
       <Input
         title={"이름"}
         value={data.name}
