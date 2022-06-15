@@ -9,15 +9,21 @@ import ListItem from '../../components/sharingInfo/ListItem';
 const SharingInfoTip = ({route, navigation} ) => {
     console.log(route.params);
     return (
-        <KeyboardAwareScrollView extraScrollHeight={10}>
-            <Styled.Title>생활꿀팁</Styled.Title>
-            <Styled.Subtitle>꿀팁! 공유해봐요~</Styled.Subtitle>
-           <ListItem />
-    </KeyboardAwareScrollView>
+        <Styled.container>
+            <KeyboardAwareScrollView extraScrollHeight={10}>
+                <Styled.Title>생활꿀팁</Styled.Title>
+                <Styled.Subtitle>꿀팁! 공유해봐요~</Styled.Subtitle>
+            <ListItem />
+            </KeyboardAwareScrollView>
+        </Styled.container>
     )
 }
 
 const Styled = { 
+    container : styled.View`
+        background-color : white;
+        flex :1;
+    `,
     Subtitle : styled.Text`
     font-size: 16px;
     color: black;

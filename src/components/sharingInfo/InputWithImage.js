@@ -100,7 +100,7 @@ const Styled = {
   `,
   imageTouchable: styled.TouchableOpacity`
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height : 300px;
     border-radius: 4px;
 
     display: flex;
