@@ -36,7 +36,7 @@ const MarketList = ({route} ) => {
                 name="detail" 
                 placeholder="상품에 관한 정보를 자유롭게 기입하여 주세요."
                 onChangeText={text =>setDetail(text)}/>
-            <Button type={'Square'} title="작성"/>
+            {/* <Button type={'Square'} title="작성"/> */}
         </StyledView>
         </KeyboardAwareScrollView>
     );

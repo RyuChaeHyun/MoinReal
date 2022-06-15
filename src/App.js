@@ -18,6 +18,7 @@ import SharingInfoCafe from './pages/SharingInfo/SharingInfoCafe';
 import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
 import SharingInfoCreate from './pages/SharingInfo/SharingInfoCreate';
 import HeaderTab from './components/common/Tab/HeadeTab';
+import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
 
 
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
@@ -37,7 +38,7 @@ const pageHeaderList = [
   {type: 'home', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
-]
+  {type: 'home', name:'JobOpeningDetail', component:JobOpeningDetail_User},]
 
 export default function App() {
   // basic setting
@@ -49,7 +50,7 @@ export default function App() {
     <>
         <NavigationContainer ref={ref}>
           <Stack.Navigator 
-            initialRouteName = 'Signin'
+            initialRouteName = 'JobOpeningDetail'
             screenOptions={{
               title: 'Moin',
               headerTintColor: theme.colors.dark,
