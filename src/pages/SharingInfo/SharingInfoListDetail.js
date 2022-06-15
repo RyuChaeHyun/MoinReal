@@ -7,7 +7,6 @@ import ListItem from '../../components/sharingInfo/ListItem';
 
 const SharingInfoListDetail = ({route, navigation} ) => {
     const {pageTitle, pageSubTitle, list} = route.params;
-    console.log(`pageTitle, pageSubTitle, list : ${pageTitle}, ${pageSubTitle}, ${list}`);
     return (
         <Styled.container>
             <KeyboardAwareScrollView extraScrollHeight={10}>

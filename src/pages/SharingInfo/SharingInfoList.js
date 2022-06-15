@@ -30,7 +30,14 @@ const SharingInfoList = ({ navigation }) => {
       <KeyboardAwareScrollView extraScrollHeight={10}>
         <Styled.listBox>
           <Styled.listTitle
-            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'맛집', pageSubTitle:'맛집을 자유롭게 공유해봐요~', list:Object.entries(lists.restaurant)})}
+            onPress={(e) => {
+              e.preventDefault();
+              navigation.push("SharingInfoListDetail", {
+                pageTitle: "맛집",
+                pageSubTitle: "맛집을 자유롭게 공유해봐요~",
+                list: Object.entries(lists.restaurant),
+              });
+            }}
           >
             <Styled.listTitleText>{"맛집"}</Styled.listTitleText>
           </Styled.listTitle>
@@ -46,10 +53,17 @@ const SharingInfoList = ({ navigation }) => {
         </Styled.listBox>
 
         <Styled.listBox>
-        <Styled.listTitle
-            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'카페', pageSubTitle:'카페 정보 자유롭게 공유해봐요~', list:Object.entries(lists.cafe)})}
+          <Styled.listTitle
+            onPress={(e) => {
+              e.preventDefault();
+              navigation.push("SharingInfoListDetail", {
+                pageTitle: "카페",
+                pageSubTitle: "카페 정보 자유롭게 공유해봐요~",
+                list: Object.entries(lists.cafe),
+              });
+            }}
           >
-          <Styled.listTitleText>{"카페"}</Styled.listTitleText>
+            <Styled.listTitleText>{"카페"}</Styled.listTitleText>
           </Styled.listTitle>
           <Styled.listCategoryView
             horizontal={true}
@@ -63,10 +77,17 @@ const SharingInfoList = ({ navigation }) => {
         </Styled.listBox>
 
         <Styled.listBox>
-        <Styled.listTitle
-            onPress={() => navigation.push("SharingInfoListDetail", {pageTitle:'생활꿀팁', pageSubTitle:'꿀팁! 공유해봐요~', list:Object.entries(lists.life)})}
+          <Styled.listTitle
+            onPress={(e) => {
+              e.preventDefault();
+              navigation.push("SharingInfoListDetail", {
+                pageTitle: "생활꿀팁",
+                pageSubTitle: "꿀팁! 공유해봐요~",
+                list: Object.entries(lists.life),
+              });
+            }}
           >
-          <Styled.listTitleText>{"생활꿀팁"}</Styled.listTitleText>
+            <Styled.listTitleText>{"생활꿀팁"}</Styled.listTitleText>
           </Styled.listTitle>
           <Styled.listCategoryView
             horizontal={true}

@@ -36,7 +36,7 @@ const pageHeaderList = [
   {type: 'basic', name:'MyPageEdit', component: MyPageEdit, title:'마이페이지 수정'},
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'basic', name:'SharingInfoCreate', component:SharingInfoCreate, title:'글쓰기'},
-  {type: 'basic', name:'SharingInfoDetail', component:SharingInfoListDetail, title:'DETAIL'},
+  {type: 'basic', name:'SharingInfoDetail', component:SharingInfoDetail, title:'DETAIL'},
   {type: 'basic', name:'SharingInfoListDetail', component:SharingInfoListDetail, title:'맛집'},
   {type: 'basic', name:'MarketList', component:MarketList},
   {type: 'home', name:'JobFindingList', component:JobFindingList},
