@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 
 const DetailLabel = ({url, title, subtitle, category}) => (
     <Styled.wrapper>
-        <styled.styledImage source ={{ url:url }}/>
-        <styled.title>{title}</styled.title>
-        <styled.subTitle>{subtitle}</styled.subTitle>
-        <styled.category>{category}</styled.category>
+        <Styled.styledImage source ={{ url:url }}/>
+        <Styled.title>{title}</Styled.title>
+        <Styled.subTitle>{subtitle}</Styled.subTitle>
+        <Styled.category>{category}</Styled.category>
     </Styled.wrapper>
 );
 

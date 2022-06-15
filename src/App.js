@@ -22,7 +22,8 @@ import JobOpeningDetail_User from './pages/JobOpening/JobOpeningDetail_User';
 import JobOpeningPostCreate from './pages/JobOpening/JobOpeningPostCreate';
 import JobOpeningDetail_nonUser from './pages/JobOpening/JobOpening_nonUser';
 import { useEffect, useState } from 'react';
-
+import JobFindingDetail_User from './pages/JobFinding/JobFindingDetail_User';
+import JobFindingDetail_nonUser from './pages/JobFinding/JobFindingDetail_nonUser';
 // none = 헤더없음 / basic = 뒤로가기버튼 + 페이지명 / home= 로고 + 채팅 + 프로필
 // name은 절대 중복되면 안됨.
 // none은 name과 component만 들어가고, basic은 name, component, title이 들어가고, home은 name, component만 들어감.
@@ -42,6 +43,9 @@ const pageHeaderList = [
   {type: 'home', name:'JobOpeningList', component:JobOpeningList},
   {type: 'basic', name:'JobOpeningDetail', component:JobOpeningDetail_User},
   {type: 'basic', name:'JobOpeningDetail_nonUser', component:JobOpeningDetail_nonUser},
+  {type: 'basic', name:'JobFindingDetail_User', component:JobFindingDetail_User},
+  {type: 'basic', name:'JobFindingDetail_nonUser', component:JobFindingDetail_nonUser},
+ 
   // {type: 'basic', name:'JobOpeningPostCreate', component:JobOpeningPostCreate, title:'구인 글쓰기'},
 ]
 
