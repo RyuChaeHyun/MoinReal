@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from '../../components/common/Input/Input';
 import InputWithImage from '../../components/sharingInfo/InputWithImage';
 import InputDropBox from '../../components/sharingInfo/InputDropBox';
-import { createData } from './../../firebase/database';
+import { updateData } from './../../firebase/database';
 import FormScrollView from './../../components/common/FormScrollView/FormScrollView';
 
 const SharingInfoCreate = ({navigation}) => {
@@ -26,7 +26,7 @@ const SharingInfoCreate = ({navigation}) => {
             detail: detail,
         }
         console.log('submitting : ', data);
-        createData('sharingInfo/', category, data);
+        updateData('sharingInfo/', category, data);
         _setClearData();
     }
     return (

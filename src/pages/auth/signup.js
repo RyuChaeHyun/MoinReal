@@ -8,7 +8,7 @@ import TitleText from "../../components/common/TitleText/TitleText";
 import theme from "../../theme";
 import FormScrollView from "../../components/common/FormScrollView/FormScrollView";
 import ProfilePicker from "../../components/auth/ProfilePicker/ProfilePicker";
-import { createData } from './../../firebase/database';
+import { updateData } from './../../firebase/database';
 
 const Signup = ({navigation}) => {
   // Fields
@@ -44,7 +44,7 @@ const Signup = ({navigation}) => {
         };
 
         // user.uid로 column명이 생겨요
-        createData('users/',user.uid,userData);
+        updateData('users/',user.uid,userData);
 
         // 다음 화면 제시
         navigation.push('SharingInfoList');
