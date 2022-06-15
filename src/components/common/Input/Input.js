@@ -30,7 +30,6 @@ const Styled = {
         font-size: ${theme.fontSize.md}px;
         font-weight: bold;
         color: black
-        padding-left: 16px;
     `,
     textInput: styled.TextInput`
         padding: 5px 10px;

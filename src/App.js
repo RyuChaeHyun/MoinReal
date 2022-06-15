@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as firebase from 'firebase/app';
 import config from '../setting/firebase.json';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SharingInfoList from './pages/SharingInfo/SharingInfoList';
 import JobFindingList from './pages/JobFinding/JobFindingList';
@@ -12,6 +12,7 @@ import MarketList from './components/Market/MarketList';
 import theme from './theme';
 import { HeaderRight, LogoTitle } from './components/common/Header/Header';
 import MyPage from './pages/auth/MyPage';
+import MyPageEdit from './pages/auth/MyPageEdit';
 import SharingInfoRestaurant from './pages/SharingInfo/SharingInfoRestaurant';
 import SharingInfoCafe from './pages/SharingInfo/SharingInfoCafe';
 import SharingInfoTip from './pages/SharingInfo/SharingInfoTip';
@@ -25,6 +26,7 @@ const pageHeaderList = [
   {type: 'none', name: 'Signin', component: Signin},
   {type: 'basic', name:'Signup', component: Signup, title:'회원 가입'},
   {type: 'basic', name:'MyPage', component: MyPage, title:'마이페이지'},
+  {type: 'basic', name:'MyPageEdit', component: MyPageEdit, title:'마이페이지 수정'},
   {type: 'home', name:'SharingInfoList', component:SharingInfoList},
   {type: 'basic', name:'SharingInfoCreate', component:SharingInfoCreate, title:'글쓰기'},
   {type: 'basic', name:'SharingInfoRestaurant', component:SharingInfoRestaurant, title:'맛집'},
@@ -39,10 +41,11 @@ export default function App() {
   // basic setting
   firebase.initializeApp(config);
   const Stack = createNativeStackNavigator();  
+  const ref = React.useRef(null);
 
   return (
     <>
-        <NavigationContainer>
+        <NavigationContainer ref={ref}>
           <Stack.Navigator 
             initialRouteName = 'Signin'
             screenOptions={{
@@ -81,7 +84,7 @@ export default function App() {
                           fontSize: theme.fontSize.lg,
                         },
                         headerLeft: ()=><LogoTitle />,
-                        headerRight:  ()=><HeaderRight />,
+                        headerRight:  ()=><HeaderRight toMypage={() => ref.current && ref.current.navigate('MyPage')}/>,
                       }}
                     />
                   );

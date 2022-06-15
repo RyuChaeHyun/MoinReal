@@ -1,28 +1,37 @@
-import { getDatabase, ref, onValue,get, child, push } from 'firebase/database';
+import { getDatabase, ref, onValue,get, child, push, set } from 'firebase/database';
+import { getAuth, updateProfile} from 'firebase/auth';
 
-// 자동으로 id생성해준대용
-export const createData = (table, column, data) =>{
+// 자동으로 id생성 해준대용
+export const createDataWithId = (table, column, data) =>{
     const db = getDatabase();
     push(ref(db, table + column), data);
 }
 
+// 자동으로 id생성 안해용 (column이 id가 됩니당)
+export const createData = (table, column, data) =>{
+    const db = getDatabase();
+    set(ref(db, table + column), data);
+}
+
 export const getData = (table, column) =>{
     const dbRef = ref(getDatabase());
-    const data = null;
     get(child(dbRef, `${table}/${column}`)).then((snapshot) => {
         if (snapshot.exists()) {
-        const val = snapshot.val();
-        console.log(typeof val);
-        data = Object.entries(val);
+            const val = snapshot.val();
+            const data = {data: val};
+            console.log(data)
+            return data;
         } else {
-        console.log("No data available");
+            console.log("No data available");
         }
     }).catch((error) => {
         console.error(error);
+        alert('데이터를 불러올 수 없습니다. 다시 시도해주세요.');
+        Alert.alert('데이터를 불러올 수 없습니다. 다시 시도해주세요.');
     });
-    return data;
 }
-export const getExampleData = () => {
+
+export const getExampleData = (table) => {
     const db = getDatabase();
     const starCountRef = ref(db, 'memo/testmemoID');
     onValue(starCountRef, (snapshot) => {
@@ -37,16 +46,3 @@ export const getSharingInfo = () => {
     return {
         title:displaytitle, category, photoUrl : photoURL, detail:displaydetail};
 };
-
-
-//  export const updateInfoPhoto = async photoUrl =>{
-//      const user = Auth.currentUser;
-//      const storageUrl = photoUrl. startsWith('https')
-//      ? photoUrl
-//      :await uploadImage(photoUrl);
-//      await user.updateProfile({photoUrl :storageUrl});
-
-//      return{
-//          title:user.displaytitle, category:user.category, photoUrl:user.photoURL, detail:user.detail
-//      };
-//  };
