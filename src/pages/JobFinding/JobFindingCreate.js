@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Input from '../../components/common/Input/Input';
 import InputWithImage from '../../components/sharingInfo/InputWithImage';
-import InputDropBox from '../../components/sharingInfo/InputDropBox';
 import { getData, updateData, createDataWithId } from './../../firebase/database';
 import FormScrollView from '../../components/common/FormScrollView/FormScrollView';
 import { getAuth } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
 
-const SharingInfoCreate = ({navigation}) => {
+const JobFindingCreate = ({navigation}) => {
     // 유저 정보 가져옴
     const auth = getAuth();
     let uid = "";
@@ -27,7 +26,6 @@ const SharingInfoCreate = ({navigation}) => {
         writerId: '',
         title: '',
         image: '',
-        category: '',
         detail: '',
     });
 
@@ -37,16 +35,14 @@ const SharingInfoCreate = ({navigation}) => {
     const setImage =  (text) =>{
         setData({...data, image: text});
     };
-    const setCategory =  (text) =>{
-        setData({...data, category: text});
-    };
+
     const setDetail = (text) =>{
         setData({...data, detail: text});
     };
 
     const submitting = () => {
         console.log('submitting : ', data);
-        createDataWithId('sharingInfo/', data.category, data);
+        createDataWithId('jobFinding/', "" , data);
     }
     return (
         <FormScrollView buttonTitle={'작성'} buttonType="Square" onPress={submitting}>
@@ -54,11 +50,10 @@ const SharingInfoCreate = ({navigation}) => {
                 title="제목" 
                 placeholder="제목을 입력하세요"
                 onChangeText={text =>setTitle(text)}/>
-            <InputWithImage  label="사진" table={'sharingInfo'}  image={data.image} setImage={setImage} />
-            <InputDropBox label="카테고리" category={data.category} setCategory={setCategory} />
+            <InputWithImage  label="사진" table={'jobFinding'}  image={data.image} setImage={setImage} />
             <Input 
                 title="상세내용" 
-                placeholder="상품에 관한 정보를 자유롭게 기입하여 주세요."
+                placeholder="세부 정보(경력, 전공, 강점, 기간, 희망 급여 등)을 자유롭게 기입합니다."
                 numberOfLines={10}
                 multiline
                 onChangeText={text =>setDetail(text)}/>
@@ -66,4 +61,4 @@ const SharingInfoCreate = ({navigation}) => {
     );
 };
 
-export default SharingInfoCreate;
+export default JobFindingCreate;
