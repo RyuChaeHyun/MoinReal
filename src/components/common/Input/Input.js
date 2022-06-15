@@ -38,7 +38,6 @@ const Styled = {
         border : 1px solid ${theme.colors.gray};
         border-radius: 8px;
         background-color: ${theme.colors.white};
-        placeholderTextColor: ${theme.colors.darkgray};
     `,
 
 }
