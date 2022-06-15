@@ -1,28 +1,22 @@
 import React from "react";
-import {nanoid} from 'nanoid';
 import styled from "styled-components/native";
 import { View, Text, Image, ScrollView } from "react-native";
 
 const dataList = [
-    {url:'사진주소1', detail:'detail1....'},
-    {url:'사진주소2', detail:'detail2....'},
-    {url:'사진주소3', detail:'detail3....'},
-    {url:'사진주소4', detail:'detail4....'},
-    {url:'사진주소5', detail:'detail5....'},
-    {url:'사진주소6', detail:'detail6....'},
+    {id: 0, url:'사진주소1', detail:'detail1....'},
+    {id: 1, url:'사진주소2', detail:'detail2....'},
+    {id: 2, url:'사진주소3', detail:'detail3....'},
+    {id: 3, url:'사진주소4', detail:'detail4....'},
+    {id: 4, url:'사진주소5', detail:'detail5....'},
+    {id: 5, url:'사진주소6', detail:'detail6....'},
 ]
-const data = {
-    id : nanoid(),
-    image : "사진주소", 
-    detail : "맛납니다..", 
-}
 
 const ListItem = () => {
   return (
     <Styled.container>
       <Styled.itemsLayout>
           {dataList.map(item=> (
-            <Styled.item key={nanoid()}>
+            <Styled.item key={item.id}>
               <Styled.cover>
                 <Styled.imageBox><Styled.description>{item.url}</Styled.description></Styled.imageBox>
               </Styled.cover>
@@ -46,7 +40,7 @@ const Styled = {
     margin: 10px;
     margin-top: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    width : 150px;   
+    width : 160px;   
 `,
     cover : styled.View`
     width: 100%;
@@ -75,7 +69,7 @@ const Styled = {
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    justifycontent: center;
+    justify-content: center;
   `,
 };
 

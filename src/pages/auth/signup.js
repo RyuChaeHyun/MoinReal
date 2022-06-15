@@ -57,14 +57,43 @@ const Signup = ({navigation}) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        Alert.alert("비밀번호가 일치하지 않습니다. ");
-        console.log(errorMessage);
+        switch (errorCode) {
+          case 'auth/email-already-exists':
+            alert('이미 사용중인 계정입니다.') // for web
+            Alert.alert("이미 사용중인 계정입니다."); // for android & iphone
+            break;
+          case 'auth/internal-error':
+            alert('인증 서버에서 요청을 처리하던 중에 예기치 않은 오류가 발생했습니다.') // for web
+            Alert.alert("인증 서버에서 요청을 처리하던 중에 예기치 않은 오류가 발생했습니다."); // for android & iphone
+            break;
+          case 'auth/invalid-email':
+            alert('이메일 형식이 올바르지 않습니다.') // for web
+            Alert.alert("이메일 형식이 올바르지 않습니다."); // for android & iphone
+            break;
+          case 'auth/invalid-password':
+            alert('비밀번호 형식이 올바르지 않습니다.') // for web
+            Alert.alert("비밀번호 형식이 올바르지 않습니다."); // for android & iphone
+            break;
+          case 'auth/user-not-found':
+            alert('해당 사용자가 존재하지 않습니다. 이메일을 다시 확인해주세요.') // for web
+            Alert.alert('해당 사용자가 존재하지 않습니다. 이메일을 다시 확인해주세요.'); // for android & iphone
+            break;
+          default:
+            alert(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`) // for web
+            Alert.alert(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`); // for android & iphone
+            console.log(`에러가 발생하였습니다(${errorCode}):  ${errorMessage}`);
+            break;
+        }
       });
   };
 
   const checkValidPassword = () => {
-    if (password === confirmPassword) return true;
-    else {
+    if(password.length < 6) {
+      alert('비밀번호의 길이를 6글자 이상으로 입력해주세요') // for web
+      Alert.alert("비밀번호의 길이를 6글자 이상으로 입력해주세요"); // for android & iphone
+      return false;
+    }
+    if (password !== confirmPassword) {
       alert('두 비밀번호가 일치하지 않습니다.') // for web
       Alert.alert("두 비밀번호가 일치하지 않습니다?"); // for android & iphone
       return false;
@@ -73,6 +102,21 @@ const Signup = ({navigation}) => {
 
   const checkValidProfileInfo = () => {
     // 나중에 조건 추가
+    if(username.length > 10) {
+      alert('닉네임은 10글자 이하로 설정해주세요.') // for web
+      Alert.alert("닉네임은 10글자 이하로 설정해주세요."); // for android & iphone
+      return false;
+    } 
+    if(username.length > 10) {
+      alert('닉네임은 10글자 이하로 설정해주세요.') // for web
+      Alert.alert("닉네임은 10글자 이하로 설정해주세요."); // for android & iphone
+      return false;
+    }
+    if(!isNaN(phone)){
+      alert('전화번호는 숫자만 입력해주세요.') // for web
+      Alert.alert("전화번호는 숫자만 입력해주세요."); // for android & iphone
+      return false;
+    }
     return true;
   }
 
@@ -120,15 +164,10 @@ const Signup = ({navigation}) => {
           onChangeSetText={setVillage}
         />
         <Input
-          title={"연락처"}
-          placeholder={"ex. 010-1234-1234"}
+          title={"연락처(ex. 61717896916"}
+          placeholder={"지역번호를 포함하여 숫자만 입력해주세요."}
           onChangeSetText={setPhone}
           keyboardType="numeric"
-        />
-        <ProfilePicker
-          title={"프로필 사진"}
-          image={null}
-          setImage={setImageUrl}
         />
       </Styled.innerContainer>
     </FormScrollView>
