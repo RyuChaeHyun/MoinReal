@@ -60,7 +60,7 @@ const SharingInfoDetail = ({ route, navigation }) => {
       </Styled.detailInfoBox>
       <DetailProfile
         source={userData.imageUrl}
-        username={userData.username}
+        username={data.writerId}
         sameUser={userData.uid === data.writerId}
       />
     </Styled.container>
