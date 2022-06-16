@@ -157,11 +157,11 @@ export default function App() {
                   headerRight: () => {
                     return (
                       <Styled.rightContainer>
-                        <Button
+                        {/* <Button
                           shape={"Round"}
                           title={"채팅"}
                           onPress={() => console.log("move to chat")}
-                        />
+                        /> */}
                         <Button
                           shape={"Round"}
                           title={"내정보"}
