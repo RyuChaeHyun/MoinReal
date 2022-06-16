@@ -24,13 +24,15 @@ const Signup = ({navigation}) => {
     const auth = getAuth();
     console.log("submitting");
     if (!checkValidPassword()) return;
+    if(!checkValidProfileInfo()) return;
+    console.log("REAL Fuck");
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-
+        console.log("Fuck");
         // save user data
-        if(! checkValidProfileInfo()) return;
         const userData = {
           uid: user.uid,
           email,
@@ -99,6 +101,7 @@ const Signup = ({navigation}) => {
       Alert.alert("두 비밀번호가 일치하지 않습니다?"); // for android & iphone
       return false;
     }
+    return true;
   };
 
   const checkValidProfileInfo = () => {
@@ -108,16 +111,12 @@ const Signup = ({navigation}) => {
       Alert.alert("닉네임은 10글자 이하로 설정해주세요."); // for android & iphone
       return false;
     } 
-    if(username.length > 10) {
-      alert('닉네임은 10글자 이하로 설정해주세요.') // for web
-      Alert.alert("닉네임은 10글자 이하로 설정해주세요."); // for android & iphone
-      return false;
-    }
-    if(!isNaN(phone)){
-      alert('전화번호는 숫자만 입력해주세요.') // for web
-      Alert.alert("전화번호는 숫자만 입력해주세요."); // for android & iphone
-      return false;
-    }
+    // if(!isNaN(phone)){
+    //   alert('전화번호는 숫자만 입력해주세요.') // for web
+    //   Alert.alert("전화번호는 숫자만 입력해주세요."); // for android & iphone
+    //   return false;
+    // }
+    console.log('checkValidProfileInfo true');
     return true;
   }
 

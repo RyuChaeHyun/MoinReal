@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components/native';
 import { Text } from 'react-native';
 import Input from '../../components/common/Input/Input';
-import InputDropBox from '../../components/jobOpening/InputDropBox';
 import { createData, createDataWithId } from './../../firebase/database';
 import FormScrollView from './../../components/common/FormScrollView/FormScrollView';
 import { getAuth } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
+import InputDropBox from './../../components/sharingInfo/InputDropBox';
 
 const JobOpeningPostCreate = ({navigation}) => {
     //유저 정보 가져오기

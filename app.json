@@ -27,16 +27,16 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mobileProgramming.moin",
+      "bundleIdentifier": "com.moin.moinreal",
       "googleServicesFile": "./setting/GoogleService-Info.plist",
       "config": {
         "googleSignIn": {
-          "reservedClientId": "932679524918-uhu51egt7aigkb1arqcn9eudtvrdtgfn.apps.googleusercontent.com" 
+          "reservedClientId": "892699323336-9t2r7ofvjs66dcmvnq4mt8lv8q93raim.apps.googleusercontent.com" 
         }
       }
     },
     "android": {
-      "package": "com.mobileProgramming.moin",
+      "package": "com.moin.moinreal",
       "googleServicesFile": "./setting/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
