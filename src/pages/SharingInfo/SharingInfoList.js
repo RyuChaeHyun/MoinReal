@@ -19,6 +19,10 @@ const SharingInfoList = ({ navigation }) => {
     getData("sharingInfo", "", setLists);
   }, []);
 
+  useEffect(() => {
+    console.log("setLists: ", lists);
+  }, [lists]);
+
   return (
     <Styled.container>
       <Button
@@ -45,10 +49,10 @@ const SharingInfoList = ({ navigation }) => {
             horizontal={true}
             showsVerticalScrollIndicator={false}
           >
-            <ListItem
-              list={Object.entries(lists.restaurant)}
-              navigation={navigation}
-            />
+              <ListItem
+                list={Object.entries(lists.restaurant)}
+                navigation={navigation}
+              />
           </Styled.listCategoryView>
         </Styled.listBox>
 
